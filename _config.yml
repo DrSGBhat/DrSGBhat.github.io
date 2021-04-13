@@ -15,10 +15,10 @@ locale                   : "en-US"
 title                    : "Sandesh Bhat"
 title_separator          : "-"
 name                     : &name "Sandesh Bhat"
-description              : &description "Ph.D. candidate, System Engineering program, Ira A. Fulton School of Engineering, Arizona State University"
-url                      : https://mrsandeshbhat.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : &description "Ph.D., System Engineering program, Ira A. Fulton School of Engineering, Arizona State University"
+url                      : https://DrSGBhat.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "mrsandeshbhat/mrsandeshbhat.github.io"
+repository               : "DrSGBhat/DrSGBhat.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -84,7 +84,7 @@ analytics:
 author:
   name             : "Sandesh Bhat"
   avatar           : "sandesh.jpg"
-  bio              : "Ph.D. candidate, System Engineering program, Ira A. Fulton School of Engineering, Arizona State University"
+  bio              : "Ph.D., System Engineering program, Ira A. Fulton School of Engineering, Arizona State University"
   location         : "Phoenix, Arizona, USA"
   employer         : "Arizona State University"
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=Dx9aVjgAAAAJ"
