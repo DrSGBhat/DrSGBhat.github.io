@@ -10,4 +10,4 @@ Add explanation here.
 <br>
 <br>
 
-[(Github Folder)](https://github.com/mrsandeshbhat/Personal_Projects/tree/master/Hopping_Frog)
+[(Github Folder)](https://github.com/DrSGBhat/Personal_Projects/tree/master/Hopping_Frog)

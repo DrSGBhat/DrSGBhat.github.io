@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Click to View My Up-to-date Curriculum Vitae [PDF]](https://mrsandeshbhat.github.io/files/CV.pdf)
+[Click to View My Up-to-date Curriculum Vitae [PDF]](https://DrSGBhat.github.io/files/CV.pdf)
 
 
 Education

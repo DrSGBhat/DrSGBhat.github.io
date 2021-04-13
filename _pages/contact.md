@@ -12,6 +12,6 @@ Mesa, AZ 85212, USA<br>
 
 Email: sandesh.bhat@asu.edu
 
-LinkedIn: [<font color="#52ADC8">mrsandeshbhat</font>](https://in.linkedin.com/in/mrsandeshbhat)
+LinkedIn: [<font color="#52ADC8">DrSGBhat</font>](https://in.linkedin.com/in/mrsandeshbhat)
 
 <!-- <embed src="https://www.linkedin.com/in/mrsandeshbhat" width="650" height="1800" type='application/pdf'> -->
