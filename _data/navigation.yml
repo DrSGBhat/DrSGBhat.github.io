@@ -12,11 +12,11 @@ main:
   #- title: "Talks"
   #  url: /talks/    
 
-  # - title: "Teaching"
-  #   url: /teaching/    
+  # - title: "Photography"
+  #   url: /Photography/    
     
-  - title: "Portfolio"
-    url: /portfolio/
+  #- title: "Portfolio"
+  #  url: /portfolio/
         
   - title: "Student Advocacy"
     url: /stuadv/

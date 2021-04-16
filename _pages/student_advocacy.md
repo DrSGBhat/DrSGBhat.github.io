@@ -7,6 +7,10 @@ author_profile: true
 I have been really active in student governments since my undergrad. I care for the mental and academic well being of my fellow students. Listed below are a few of the things I have done over the years.
 <br>
 <br>
+* <b>Director of Outreach</b> <i>(Graduate and Professional Students Association)</i> <br> 
+<i>Arizona State University, U.S.A.</i><br>
+	*	<br>
+<br>
 * <b>Assembly Member</b> <i>(Graduate and Professional Students Association)</i> <br> 
 <i>Arizona State University, U.S.A.</i><br>
 	*	Organized a Ph.D. student mixer with the Engineering committee.<br>
