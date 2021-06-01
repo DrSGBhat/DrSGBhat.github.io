@@ -14,19 +14,23 @@ redirect_from:
 
 Education
 ======
-* B.E. in Mechanical Engineering, Mumbai University, India, 2016
-* M.S. in Mechanical and Aerospace Engineering, Arizona State University, U.S.A., 2017
-* Ph.D in Systems Engineering, Arizona State University, U.S.A., 2021 (expected)
+* B.E. in Mechanical Engineering, Mumbai University, India, May 2016
+* M.S. in Mechanical and Aerospace Engineering, Arizona State University, U.S.A., December 2017
+* Ph.D in Systems Engineering, Arizona State University, U.S.A., May 2021
 
 Work experience
 ======
+* Research Fellow (May 2021 - present)
+  * Department of Orthopedics, Mayo Clinic, Rochester, MN.
+  * Supervisor: Dr. Kenton Kaufman, Kathie Bernhardt
+
 * Graduate Teaching Assistant (Fall 2018, Spring 2019, Fall 2019)
-  * Arizona State University
+  * Arizona State University, Mesa, AZ
   * Duties included: Teaching EGR 219: Computational Modelling of Engineering Systems (Fall 2018, Spring 2019); TA EGR 217 and EGR 343: Mechanics and Strength of Materials (Fall 2019)
   * Supervisor: Dr. Scott Danielson; Dr. Changho Nam; Dr. Sangram Redkar
 
 * Graduate Research Assistant (Fall 2017, Spring 2018, Fall 2018)
-  * Arizona State University
+  * Arizona State University, Mesa, AZ
   * Duties included: Designing Prostheses and Exosuits; Simulating Human Walking Gait using various Robotic Manipulators; Simulating the Dynamics of Human Gait
   * Supervisor: Dr. Sangram Redkar; Dr. Thomas Sugar
   
@@ -52,6 +56,7 @@ Publications
  
 Service and leadership
 ======
+* Director of Outreach, Polytechnic Campus (Graduate and Professional Student Association) (August 2020 - May 2021)
 * Engineering Assembly member (Graduate and Professional Student Association) (August 2019 - May 2020)
 * Student Body President (Mechanical Engineering Students Association) (August 2015 - May 2016)
 * Treasurer (Mechanical Engineering Students Association) (August 2014 - May 2015)
