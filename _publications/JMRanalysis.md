@@ -3,7 +3,7 @@ title: "Application of Floquet Theory to Human Gait Kinematics and Dynamics"
 collection: publications
 permalink: /publications/JMRanalysis
 date: 2021-05-31
-journal: 'Journal of Mechanisms &amp; Robotics'
+venue: 'Journal of Mechanisms &amp; Robotics'
 citation: '<b><i>Sandesh G. Bhat</i></b>, Susheelkumar C Subramanian, Thomas G. Sugar, Sangram Redkar.'
 ---
 
