@@ -7,6 +7,16 @@ author_profile: true
 For proper citations, refer [Google Scholar](https://scholar.google.com/citations?user=Dx9aVjgAAAAJ&hl=en)<br>
 <br>
 <br>
+<b>[Dynamical Systems Theory and its Application to Human Gait Analysis](http://DrSGBhat.github.io/publications/PhDdiss)</b> <br> 
+<i><b>Sandesh G Bhat</b></i>.<br>
+<i>PhD Dissertation, Arizona State University</i>.
+<br>
+<br>
+<b>[Application of Floquet Theory to Human Gait Kinematics and Dynamics](http://DrSGBhat.github.io/publications/JMRanalysis)</b> <br> 
+<b><i>Sandesh G. Bhat</i></b>, Susheelkumar C Subramanian, Thomas G. Sugar, Sangram Redkar.<br>
+<i>Journal of Mechanisms and Robotics</i>.
+<br>
+<br>
 <b>[Reconstruction Of Ground Reaction Force Data Using Lyapunov Floquet Theory And Invariant Manifold Theory](http://DrSGBhat.github.io/publications/IDETCgrfrecon)</b> <br> 
 <b><i>Sandesh G. Bhat</i></b>, Thomas G. Sugar, Sangram Redkar.<br>
 <i>ASME 2020 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference</i>. <b>IDETC-CIE 2020</b>.
