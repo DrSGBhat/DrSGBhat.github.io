@@ -9,7 +9,8 @@ I have been really active in student governments since my undergrad. I care for 
 <br>
 * <b>Director of Outreach</b> <i>(Graduate and Professional Students Association)</i> <br> 
 <i>Arizona State University, U.S.A.</i><br>
-	*	<br>
+	*	Organized events on the Polytechnic campus for the Graduate student body.<br>
+    *	Acted as a point of communication for the campus administration and the student body.<br>
 <br>
 * <b>Assembly Member</b> <i>(Graduate and Professional Students Association)</i> <br> 
 <i>Arizona State University, U.S.A.</i><br>

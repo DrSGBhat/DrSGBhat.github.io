@@ -9,14 +9,16 @@ redirect_from:
 
 {% include base_path %}
 
-[Click to View My Up-to-date Curriculum Vitae [PDF]](https://DrSGBhat.github.io/files/CV.pdf)
+Resume (short) [PDF](https://DrSGBhat.github.io/files/Bhat_Resume.pdf)
+
+Curriculum Vitae (long) [PDF](https://DrSGBhat.github.io/files/Bhat_CV.pdf)
 
 
 Education
 ======
-* B.E. in Mechanical Engineering, Mumbai University, India, May 2016
-* M.S. in Mechanical and Aerospace Engineering, Arizona State University, U.S.A., December 2017
 * Ph.D in Systems Engineering, Arizona State University, U.S.A., May 2021
+* M.S. in Mechanical and Aerospace Engineering, Arizona State University, U.S.A., December 2017
+* B.E. in Mechanical Engineering, Mumbai University, India, May 2016
 
 Work experience
 ======

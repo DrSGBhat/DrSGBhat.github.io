@@ -7,10 +7,9 @@ author_profile: true
 
 {% include base_path %}
 
-6075 S. Innovation Way West, 101D<br>
-Mesa, AZ 85212, USA<br>
+Rochester, MN<br>
 
-Email: sandesh.bhat@asu.edu
+Email: mrsandeshbhat [at] gmail [dot] com
 
 LinkedIn: [<font color="#52ADC8">DrSGBhat</font>](https://in.linkedin.com/in/mrsandeshbhat)
 
