@@ -7,6 +7,11 @@ author_profile: true
 For proper citations, refer [Google Scholar](https://scholar.google.com/citations?user=Dx9aVjgAAAAJ&hl=en)<br>
 <br>
 <br>
+<b>[Order reduction of nonlinear quasi-periodic systems subjected to external excitations](https://doi.org/10.1016/j.ijnonlinmec.2022.103994)</b> <br>
+<i><b>Sandesh G Bhat</b></i>Susheelkumar C Subramanian, Sangram Redkar.<br>
+<i>International Journal of Non-Linear Mechanics</i>.
+<br>
+<br>
 <b>[Dynamical Systems Theory and its Application to Human Gait Analysis](http://DrSGBhat.github.io/publications/PhDdiss)</b> <br> 
 <i><b>Sandesh G Bhat</b></i>.<br>
 <i>PhD Dissertation, Arizona State University</i>.

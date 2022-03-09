@@ -23,8 +23,8 @@ Education
 Work experience
 ======
 * Research Fellow (May 2021 - present)
-  * Department of Orthopedics, Mayo Clinic, Rochester, MN.
-  * Supervisor: Dr. Kenton Kaufman, Kathie Bernhardt
+  * Motion Analysis Laboratory, Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
+  * Supervisor: Dr. Kenton Kaufman
 
 * Graduate Teaching Assistant (Fall 2018, Spring 2019, Fall 2019)
   * Arizona State University, Mesa, AZ
