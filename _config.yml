@@ -86,9 +86,10 @@ author:
   avatar           : "sandesh.jpg"
   bio              : "Research Fellow,
                       Motion Analysis Laboratory,
+                      Division of Orthopedic Surgery,
                       Mayo Clinic."
   location         : "Rochester, MN, USA"
-  employer         : "Mayo Clinic"
+  employer         : 
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=Dx9aVjgAAAAJ"
   email            : "mrsandeshbhat@gmail.com"
   uri              : 
@@ -101,7 +102,7 @@ author:
   github           : "mrsandeshbhat"
   google_plus      :
   keybase          :
-  instagram        : 
+  instagram        : "this_shutter"
   lastfm           :
   linkedin         : "mrsandeshbhat"
   orcid            : "https://orcid.org/0000-0002-8989-0235"

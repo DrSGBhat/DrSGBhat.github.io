@@ -7,7 +7,7 @@ author_profile: true
 For proper citations, refer [Google Scholar](https://scholar.google.com/citations?user=Dx9aVjgAAAAJ&hl=en)<br>
 <br>
 <br>
-<b>[Order reduction of nonlinear quasi-periodic systems subjected to external excitations](https://doi.org/10.1016/j.ijnonlinmec.2022.103994)</b> <br>
+<b>[Order reduction of nonlinear quasi-periodic systems subjected to external excitations](http://DrSGBhat.github.io/publications/IJNLMorder)</b> <br>
 <i><b>Sandesh G Bhat</b></i>Susheelkumar C Subramanian, Sangram Redkar.<br>
 <i>International Journal of Non-Linear Mechanics</i>.
 <br>
@@ -44,7 +44,7 @@ Thao Le, <i><b>Sandesh G Bhat</b></i>, Susheelkumar C Subramanian, Peter MB Wasw
 <br>
 <b>[Volitional control of an active prosthetic ankle: a survey](http://DrSGBhat.github.io/publications/IRAJsurvey)</b> <br> 
 <i><b>Sandesh G Bhat</b></i>, Sangram Redkar.<br>
-<i>International Robotics &amp; Automation Journal</i>. <b>IRATJ 2018</b>.
+<i>International Robotics &amp; Automation Journal</i>.
 <br>
 <br>
 <b>[Design and Development of an Unmanned Underwater Vehicle (UUV) in the Form of a Cuttlefish](http://DrSGBhat.github.io/publications/IMECEuuv)</b> <br> 
