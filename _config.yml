@@ -84,9 +84,9 @@ analytics:
 author:
   name             : "Sandesh Bhat"
   avatar           : "sandesh.jpg"
-  bio              : "Research Fellow,
-                      Motion Analysis Laboratory,
-                      Division of Orthopedic Surgery,
+  bio              : "Research Fellow,<br>
+                      Motion Analysis Laboratory,<br>
+                      Division of Orthopedic Surgery,<br>
                       Mayo Clinic."
   location         : "Rochester, MN, USA"
   employer         : 
