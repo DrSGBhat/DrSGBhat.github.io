@@ -3,7 +3,7 @@ title: "Muscle activation for targeted elbow force production following surgical
 collection: publications
 permalink: /publications/JOR23
 date: 2023-02-22
-venue: 'IEEE Wearable Robotics Association Conference'
+venue: 'Journal of Orthopaedic Surgery'
 citation: '<b><i>Sandesh G Bhat</i></b>, Emily J Miller, Alexander Y Shin, Kenton R Kaufman'
 ---
 
