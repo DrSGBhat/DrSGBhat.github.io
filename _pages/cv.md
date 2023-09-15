@@ -22,9 +22,13 @@ Education
 
 Work experience
 ======
-* Research Fellow (May 2021 - present)
+* Senior Research Fellow (July 2023 - Present)
   * Motion Analysis Laboratory, Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
-  * Supervisor: Dr. Kenton Kaufman
+  * Principal Investigator: Dr. Kenton Kaufman
+  * 
+* Research Fellow (May 2021 - July 2023)
+  * Motion Analysis Laboratory, Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
+  * Principal Investigator: Dr. Kenton Kaufman
 
 * Graduate Teaching Assistant (Fall 2018, Spring 2019, Fall 2019)
   * Arizona State University, Mesa, AZ
@@ -38,6 +42,7 @@ Work experience
   
 Skills
 ======
+* Design and Performance of Clinical Trials
 * Computer Aided Design/Drawing (SolidWorks, Fusion 360, ProE)
 * Matlab Programming (Matlab and Simulink)
 * Python Programming
