@@ -9,8 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-Resume (short) [PDF](https://DrSGBhat.github.io/files/Bhat_Resume.pdf)
-
 Curriculum Vitae (long) [PDF](https://DrSGBhat.github.io/files/Bhat_CV.pdf)
 
 
@@ -23,9 +21,6 @@ Education
 Work experience
 ======
 * Senior Research Fellow (July 2023 - Present)
-  * Motion Analysis Laboratory, Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
-  * Principal Investigator: Dr. Kenton Kaufman
-  * 
 * Research Fellow (May 2021 - July 2023)
   * Motion Analysis Laboratory, Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
   * Principal Investigator: Dr. Kenton Kaufman
@@ -57,9 +52,7 @@ Skills
 
 Publications
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+Refer [Google Scholar](https://scholar.google.com/citations?user=Dx9aVjgAAAAJ&hl=en)
  
 Service and leadership
 ======
