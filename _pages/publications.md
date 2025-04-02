@@ -43,7 +43,7 @@ updated: 4/2/2025
 	<i><b>Sandesh G Bhat</b></i>, Emily Miller, Alexander Shin, Kenton Kaufman.<br>
 	<i>Journal of Orthopaedic Research</i>.
 
-#2022
+# 2022
 12. <b>[Applications of symbolically computed Lyapunov-Floquet transformation](http://DrSGBhat.github.io/publications/IJNDC22)</b> <br>
 	Susheelkumar Subramanian, <i><b>Sandesh G Bhat</b></i>, Sangram Redkar.<br>
 	<i>International Journal of Nonlinear Dynamics and Control</i>.
