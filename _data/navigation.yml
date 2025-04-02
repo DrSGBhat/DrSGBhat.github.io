@@ -15,6 +15,9 @@ main:
   #- title: "Photography"
   #  url: /Photography/    
     
+  - title: "Teaching"
+    url: /teaching/   
+
   - title: "My Travel"
     url: /mytravel/
         

@@ -9,7 +9,7 @@ updated: 4/2/2025
 
 # Extramural
 ## Oral
-1. <b>Upper extremity neuromuscular control in the aging population<br><br>
+1. <b>Upper extremity neuromuscular control in the aging population</b><br>
 	September, 2024 <br>
 	<i>Invited Speaker</i>, Katies for Aging Research and Equity program<br>
 	St. Catherine University, St. Paul, MN.
