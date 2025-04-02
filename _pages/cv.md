@@ -20,7 +20,13 @@ Education
 
 Work experience
 ======
+* Assistant Professor of Biomedical Engineering (Dec 2024 - Present)
+  * Mayo Clinic College of Medicine and Science, Rochester, MN.
+
 * Senior Research Fellow (July 2023 - Present)
+  * Motion Analysis Laboratory, Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
+  * Principal Investigator: Dr. Kenton Kaufman
+
 * Research Fellow (May 2021 - July 2023)
   * Motion Analysis Laboratory, Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
   * Principal Investigator: Dr. Kenton Kaufman
@@ -34,6 +40,26 @@ Work experience
   * Arizona State University, Mesa, AZ
   * Duties included: Designing Prostheses and Exosuits; Simulating Human Walking Gait using various Robotic Manipulators; Simulating the Dynamics of Human Gait
   * Supervisor: Dr. Sangram Redkar; Dr. Thomas Sugar
+  
+Honors and Awards
+======
+* Finalist, Jennifer Jowsey Research Fellow Award, 2024
+	* Department of Orthopedic Surgery, Mayo Clinic.
+
+* Kelly Reseach Fellow, 2023 - 24
+	* Department of Orthopedic Surgery, Mayo Clinic.
+
+* Finalist, Jennifer Jowsey Research Fellow Award, 2023
+	* Department of Orthopedic Surgery, Mayo Clinic.
+
+* Julian M. Bruner Award, 2023
+	* American Society of Surgery of the Hand.
+
+* Outstanding Abstract and Poster, 2023
+	* Department of Physiology and Biomedical Engineering, Mayo Clinic.
+
+* Clinical Biomechanics Award, 2022
+	* North American Congress on Bio-mechanics.
   
 Skills
 ======
@@ -50,13 +76,13 @@ Skills
 * Motion Capture and Data Analysis (Vicon and Optitrack systems)
 * Fabrication of Various Devices
 
-Publications
-======
-Refer [Google Scholar](https://scholar.google.com/citations?user=Dx9aVjgAAAAJ&hl=en)
- 
 Service and leadership
 ======
 * Director of Outreach, Polytechnic Campus (Graduate and Professional Student Association) (August 2020 - May 2021)
 * Engineering Assembly member (Graduate and Professional Student Association) (August 2019 - May 2020)
 * Student Body President (Mechanical Engineering Students Association) (August 2015 - May 2016)
 * Treasurer (Mechanical Engineering Students Association) (August 2014 - May 2015)
+
+Publications
+======
+Refer [Google Scholar](https://scholar.google.com/citations?user=Dx9aVjgAAAAJ&hl=en)
