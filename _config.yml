@@ -12,9 +12,9 @@
 #minimal_mistakes_skin : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 locale                   : "en-US"
-title                    : "Sandesh Bhat"
+title                    : "Sandesh G. Bhat"
 title_separator          : "-"
-name                     : &name "Sandesh Bhat"
+name                     : &name "Sandesh G. Bhat"
 description              : &description "Assistant Professor, Mayo Clinic"
 url                      : https://DrSGBhat.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -82,7 +82,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Sandesh Bhat"
+  name             : "Sandesh G. Bhat"
   avatar           : "sandesh.jpg"
   bio              : "Assistant Professor ,<br>
                       Physiology and Biomedical Engineering,<br>
