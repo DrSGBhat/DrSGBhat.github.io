@@ -17,13 +17,13 @@ main:
     
   - title: "Teaching"
     url: /teaching/   
-
+        
+  - title: "Service"
+    url: /service/
+    
   - title: "My Travel"
     url: /mytravel/
-        
-  - title: "Student Advocacy"
-    url: /stuadv/
-    
+
   - title: "Contact"
     url: /contact/  
     
