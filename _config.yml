@@ -15,7 +15,7 @@ locale                   : "en-US"
 title                    : "Sandesh G. Bhat"
 title_separator          : "-"
 name                     : &name "Sandesh G. Bhat"
-description              : &description "Assistant Professor, Mayo Clinic"
+description              : &description "Assistant Professor, UWEC"
 url                      : https://DrSGBhat.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "DrSGBhat/DrSGBhat.github.io"
@@ -85,10 +85,10 @@ author:
   name             : "Sandesh G. Bhat"
   avatar           : "sandesh.jpg"
   bio              : "Assistant Professor ,<br>
-                      Physiology and Biomedical Engineering,<br>
-                      College of Medicine and Science,<br>
-                      Mayo Clinic."
-  location         : "Rochester, MN, USA"
+                      Assistive Systems & Robotics Engineering,<br>
+                      Physics & Astronomy Department,<br>
+                      University of Wisconsin"
+  location         : "Eau Claire, WI, USA"
   employer         : 
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=Dx9aVjgAAAAJ"
   email            : "mrsandeshbhat@gmail.com"

@@ -7,7 +7,7 @@ author_profile: true
 
 {% include base_path %}
 
-Rochester, MN<br>
+Eau Claire, WI, U.S.A.<br>
 
 Email: mrsandeshbhat [at] gmail [dot] com
 

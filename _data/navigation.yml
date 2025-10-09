@@ -21,8 +21,8 @@ main:
   - title: "Service"
     url: /service/
     
-  - title: "My Travel"
-    url: /mytravel/
+  # - title: "My Travel"
+  #   url: /mytravel/
 
   - title: "Contact"
     url: /contact/  

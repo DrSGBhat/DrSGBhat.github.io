@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-Curriculum Vitae (updated: 4/2/2025) [PDF](https://DrSGBhat.github.io/files/Bhat_CV.pdf)
+Curriculum Vitae (updated: 10/9/2025) [PDF](https://DrSGBhat.github.io/files/Bhat_CV.pdf)
 
 
 Education
@@ -20,10 +20,13 @@ Education
 
 Work experience
 ======
-* Assistant Professor of Biomedical Engineering (Dec 2024 - Present)
+* Assistant Professor of Assistive Robotics (Aug  2025 - Present)
+  * Physics and Astronomy Department, University of Wisconsin-Eau Claire, Eau Claire, WI.
+
+* Assistant Professor of Biomedical Engineering (Dec 2024 - Aug 2025)
   * Mayo Clinic College of Medicine and Science, Rochester, MN.
 
-* Senior Research Fellow (July 2023 - Present)
+* Senior Research Fellow (July 2023 - Aug 2025)
   * Motion Analysis Laboratory, Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
   * Principal Investigator: Dr. Kenton Kaufman
 
@@ -43,6 +46,12 @@ Work experience
   
 Honors and Awards
 ======
+* Outstanding Poster, 2025
+  * Department of Physiology and Biomedical Engineering, Mayo Clinic.
+
+* Editor's Choice, 2025
+  * Journal of Hand Surgery Volume 50 Issue 7.
+
 * Finalist, Jennifer Jowsey Research Fellow Award, 2024
 	* Department of Orthopedic Surgery, Mayo Clinic.
 

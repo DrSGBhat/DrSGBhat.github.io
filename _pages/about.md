@@ -8,7 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-Welcome! I am Sandesh Bhat, a Senior Research Fellow at the [Motion Analysis Laboratory](https://www.mayo.edu/research/labs/motion-analysis/overview), Mayo Clinic, and an Assistant Professor of Biomedical Engineering within the [Mayo Clinic College of Medicine and Science](https://college.mayo.edu/), Mayo Clinic. My research focuses on developing orthotic devices to advance upper extremity rehabilitation. 
+Welcome! I’m Sandesh Bhat, an Assistant Professor of Assistive Robotics at the University of Wisconsin–Eau Claire. 
+
+In the past, I was a Senior Research Fellow at the [Motion Analysis Laboratory](https://www.mayo.edu/research/labs/motion-analysis/overview), Mayo Clinic, and an Assistant Professor of Biomedical Engineering within the [Mayo Clinic College of Medicine and Science](https://college.mayo.edu/), Mayo Clinic. My research there focused on developing orthotic devices to advance upper extremity rehabilitation. 
 
 I received my Ph.D. in [Systems Engineering](https://poly.engineering.asu.edu/engineering/phd-systems-engineering/) from the [Ira A. Fulton School of Engineering](https://engineering.asu.edu/), Arizona State University. There, I researched in the field of Robotics and Dynamics for Rehabilitation Application. I was advised by [Dr. Sangram Redkar](https://isearch.asu.edu/profile/1114748) and [Dr. Thomas Sugar](https://isearch.asu.edu/profile/227786) in the [Robotics and Dynamical Systems Group](https://labs.engineering.asu.edu/rads/). I received my Master of Science (MS) degree in [Mechanical Engineering](https://semte.engineering.asu.edu/mechanical-graduate/) from the [Ira A. Fulton School of Engineering](https://engineering.asu.edu/), Arizona State University and my Bachelor of Engineering (BE) Degree in Mechanical Engineering from the [University of Mumbai](http://mu.ac.in/).
 

@@ -3,7 +3,7 @@ title: "Service"
 permalink: /service/
 author_profile: true
 ---
-updated: 4/2/2025
+updated: 10/9/2025
 
 # Organizational
 
@@ -44,6 +44,9 @@ updated: 4/2/2025
 
 * <b>Peer Reviewer</b>
 	* <i>Journals</i>
+		* Journal of Biomechanics (2025)
+		* Journal of Neuroengineering and Rehabilitation (2025)
+		* BMC Medical Informatics and Decision Making (2025)
 		* Archives of Rehabilitation Research and Clinical Translation (2024 - 2025)
 		* PLOS ONE (2024 - 2025)
 		* IEEE Transactions on Neural Systems and Rehabilitation Engineering (2024)

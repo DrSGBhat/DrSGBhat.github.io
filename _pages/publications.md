@@ -6,9 +6,29 @@ author_profile: true
 <br>
 For proper citations, refer [Google Scholar](https://scholar.google.com/citations?user=Dx9aVjgAAAAJ&hl=en)<br>
 <br>
-updated: 4/2/2025
+updated: 10/9/2025
 
 ## 2025
+25. <b>[Dynamic Stability Analysis of Progressive Supranuclear Palsy affected gait using Lyapunov Floquet Theory](http://DrSGBhat.github.io/publications/TNSRE_PSP25)</b>
+	<i><b>Sandesh G Bhat</b></i>, Farwa Ali, Cecilia Hogen, Asghar Rezaei, Keith Josephs, Jennifer Whitwell, Kenton Kaufman.<br>
+	<i>IEEE Transactions on Neural Systems and Rehabilitation Engineering</i>.
+
+24. <b>[Patient-Reported Outcome Measures used in Clinical Trials of an Elbow Orthosis: A Scoping Review](http://DrSGBhat.github.io/publications/POI25)</b>
+	Hadley Ninow, Apurba Barman, <i><b>Sandesh G Bhat</b></i>, Gwen Wilson, Kenton Kaufman.<br>
+	<i>Prosthetics and Orthotics International</i>.
+
+23. <b>[Real-World Evidence-Based Outcomes to Measure Upper Extremity Activity in The Brachial Plexus Injury Population](http://DrSGBhat.github.io/publications/EJOST25)</b>
+	<i><b>Sandesh G Bhat</b></i>, Alexander Shin, Kenton Kaufman.<br>
+	<i>European Journal of Orthopaedic Surgery and Traumatology</i>.
+
+22. <b>[Spinal Accessory Nerve vs Intercostal Nerves in Gracilis Free Functioning Muscle Transfer for Elbow Flexion in Adult Brachial Plexus Patients](http://DrSGBhat.github.io/publications/JHS25)</b><br>
+	<i><b>Sandesh G Bhat</b></i>, Allen Bishop, Robert Spinner, Kenton Kaufman, Alexander Shin.<br>
+	<i>Journal of Hand Surgery</i>.
+
+21. <b>[Evaluating Longitudinal Changes of Gait Parameters Following Shunt Placement in Patients with Idiopathic Normal Pressure Hydrocephalus](http://DrSGBhat.github.io/publications/JNS25)</b><br>
+	 Rahul Kumar, Abdelrahman M. Hamouda, Zach Pennington, Maria D. Astudillo Potes, Mahnoor Shafi, Hana Hallak, <i><b>Sandesh G. Bhat</b></i>, Asghar Rezaei, Ignacio Jusué-Torres, Jonathan Graff-Radford, David T. Jones, Hugo Botha, Jeremy K. Cutsforth-Gregory, Farwa Ali, Petrice M. Cogswell, Kenton R. Kaufman, Benjamin D. Elder.<br>
+	<i>Journal of Neurosurgery</i>.
+
 20. <b>[Enhanced Functionality Using a Powered Upper Extremity Exoskeleton in Patients with Brachial Plexus Injuries](http://DrSGBhat.github.io/publications/TNSRE25)</b> <br>
 	<i><b>Sandesh G Bhat</b></i>, Emily Miller, Paul Kane, Kevin Hollander, Claudio Vignola, Alexander Shin, Thomas Sugar, Kenton Kaufman.<br>
 	<i>IEEE Transactions on Neural Systems and Rehabilitation Engineering</i>.
