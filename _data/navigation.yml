@@ -25,7 +25,7 @@ main:
   #   url: /mytravel/
 
   - title: "RASR"
-    url: /RASR.html
+    url: /RASR/
 
   - title: "Contact"
     url: /contact/  
