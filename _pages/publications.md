@@ -9,15 +9,15 @@ For proper citations, refer [Google Scholar](https://scholar.google.com/citation
 updated: 10/9/2025
 
 ## 2025
-25. <b>[Dynamic Stability Analysis of Progressive Supranuclear Palsy affected gait using Lyapunov Floquet Theory](http://DrSGBhat.github.io/publications/TNSRE_PSP25)</b>
+25. <b>[Dynamic Stability Analysis of Progressive Supranuclear Palsy affected gait using Lyapunov Floquet Theory](http://DrSGBhat.github.io/publications/TNSRE_PSP25)</b><br>
 	<i><b>Sandesh G Bhat</b></i>, Farwa Ali, Cecilia Hogen, Asghar Rezaei, Keith Josephs, Jennifer Whitwell, Kenton Kaufman.<br>
 	<i>IEEE Transactions on Neural Systems and Rehabilitation Engineering</i>.
 
-24. <b>[Patient-Reported Outcome Measures used in Clinical Trials of an Elbow Orthosis: A Scoping Review](http://DrSGBhat.github.io/publications/POI25)</b>
+24. <b>[Patient-Reported Outcome Measures used in Clinical Trials of an Elbow Orthosis: A Scoping Review](http://DrSGBhat.github.io/publications/POI25)</b><br>
 	Hadley Ninow, Apurba Barman, <i><b>Sandesh G Bhat</b></i>, Gwen Wilson, Kenton Kaufman.<br>
 	<i>Prosthetics and Orthotics International</i>.
 
-23. <b>[Real-World Evidence-Based Outcomes to Measure Upper Extremity Activity in The Brachial Plexus Injury Population](http://DrSGBhat.github.io/publications/EJOST25)</b>
+23. <b>[Real-World Evidence-Based Outcomes to Measure Upper Extremity Activity in The Brachial Plexus Injury Population](http://DrSGBhat.github.io/publications/EJOST25)</b><br>
 	<i><b>Sandesh G Bhat</b></i>, Alexander Shin, Kenton Kaufman.<br>
 	<i>European Journal of Orthopaedic Surgery and Traumatology</i>.
 
