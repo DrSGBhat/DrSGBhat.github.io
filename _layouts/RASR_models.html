@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Portfolio — RASR Lab</title>
+
+<!-- Same stylesheet as RASR Lab Website -->
+<link rel="stylesheet" href="https://drsgbhat.github.io/assets/css/w3.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  body, h1, h2, h3, h4, h5 { font-family: "Atkinson Hyperlegible", sans-serif; }
+  body { font-size: 16px; }
+
+  /* Card viewer canvas */
+  .model-viewer { width: 100%; height: 220px; display: block; background: #eef1f5; cursor: grab; }
+  .model-viewer:active { cursor: grabbing; }
+  .viewer-wrap { position: relative; overflow: hidden; }
+  .drag-hint {
+    position: absolute; bottom: 7px; right: 10px;
+    font-size: 10px; color: #888; pointer-events: none;
+    opacity: 1; transition: opacity 0.4s;
+    font-family: monospace; letter-spacing: 0.04em;
+  }
+  .viewer-wrap.interacted .drag-hint { opacity: 0; }
+
+  /* Filter buttons */
+  .filter-btn { margin: 4px 4px 4px 0; border-radius: 20px !important; font-weight: bold; font-size: 13px; }
+
+  /* Model cards grid */
+  .model-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  /* Card hover lift */
+  .model-card { transition: transform 0.2s, box-shadow 0.2s; border-radius: 4px; overflow: hidden; }
+  .model-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important; }
+
+  /* Tag pill */
+  .tag-pill {
+    display: inline-block;
+    background: #fdb414; color: #002b52;
+    font-size: 10px; font-weight: bold;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 12px;
+    margin: 2px 3px 2px 0;
+  }
+
+  /* Expand link */
+  .expand-link {
+    font-size: 13px; font-weight: bold;
+    color: #174094; text-decoration: none;
+    border-bottom: 2px solid #fdb414;
+  }
+  .expand-link:hover { color: #002b52; }
+
+  /* Modal viewer */
+  .modal-viewer { width: 100%; height: 400px; display: block; background: #eef1f5; }
+  .modal-controls {
+    position: absolute; bottom: 10px; left: 10px; display: flex; gap: 6px; z-index: 1;
+  }
+  .ctrl-btn {
+    background: rgba(255,255,255,0.9); border: 1px solid #ccc;
+    border-radius: 4px; padding: 4px 10px;
+    font-size: 11px; font-weight: bold; color: #174094;
+    cursor: pointer; font-family: "Atkinson Hyperlegible", sans-serif;
+  }
+  .ctrl-btn:hover { background: #fff; }
+
+  /* Spec grid in modal */
+  .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .spec-item { border-top: 3px solid #fdb414; padding-top: 6px; }
+  .spec-label { font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #757575; margin-bottom: 2px; }
+  .spec-value { font-size: 14px; font-weight: bold; color: #174094; }
+
+  @media (max-width: 600px) {
+    .model-grid { grid-template-columns: 1fr; }
+    .spec-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── SIDEBAR (identical structure to RASR site) ── -->
+<nav class="w3-sidebar w3-uwec-blue w3-collapse w3-top w3-large w3-padding"
+     style="z-index:3;width:300px;font-weight:bold;" id="mySidebar">
+  <br>
+  <a href="javascript:void(0)" onclick="w3_close()"
+     class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">X</a>
+
+  <div class="w3-container">
+    <!-- Swap for your real logo: <img src="assets/img/RASR_Lab_logo.png" style="width:100%" alt="RASR Lab Logo"> -->
+    <h3 style="margin-top:16px;line-height:1.3">
+      <b>Robotics for<br>Assistive<br>Systems and<br>Rehabilitation</b>
+    </h3>
+    <p style="font-size:13px;opacity:0.65;font-weight:normal;">RASR Lab · UWEC</p>
+  </div>
+
+  <div class="w3-bar-block" style="margin-top:16px;">
+    <a href="index.html"          class="w3-bar-item w3-button w3-hover-white">← Lab Home</a>
+    <a href="#3dmodels"           class="w3-bar-item w3-button w3-hover-white">3D Models</a>
+    <a href="#about"              class="w3-bar-item w3-button w3-hover-white">About This Work</a>
+    <a href="index.html#projects" class="w3-bar-item w3-button w3-hover-white">Projects</a>
+    <a href="index.html#publications" class="w3-bar-item w3-button w3-hover-white">Publications</a>
+    <a href="index.html#contact"  class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- ── TOP BAR (small screens) ── -->
+<header class="w3-container w3-top w3-hide-large w3-uwec-blue w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-uwec-blue w3-margin-right" onclick="w3_open()">☰</a>
+  <span>RASR Lab · 3D Portfolio</span>
+</header>
+
+<!-- ── OVERLAY ── -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<!-- ════════════ PAGE CONTENT ════════════ -->
+<div class="w3-main" style="margin-left:340px; margin-right:40px;">
+
+  <!-- Hero -->
+  <div class="w3-container" style="margin-top:80px;" id="3dmodels">
+    <h1 class="w3-humongous w3-uwec-text-blue"><b>3D Portfolio</b></h1>
+    <h2 class="w3-xxxlarge w3-uwec-text-blue"><b>Product &amp; Engineering Models</b></h2>
+    <hr style="width:50px;border:5px solid #fdb414" class="w3-round">
+    <p>
+      Interactive 3D models developed within the RASR Lab for assistive robotics,
+      rehabilitation devices, and mechanical systems. <b>Drag to orbit — scroll to zoom.</b>
+      Double-click any card to expand.
+    </p>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="w3-container" style="margin-top:24px;">
+    <button class="w3-button w3-uwec-blue w3-round filter-btn active-filter" data-filter="all">All</button>
+    <button class="w3-button w3-border w3-round filter-btn" data-filter="product" style="color:#174094;border-color:#174094;">Product Design</button>
+    <button class="w3-button w3-border w3-round filter-btn" data-filter="mechanical" style="color:#174094;border-color:#174094;">Mechanical</button>
+    <button class="w3-button w3-border w3-round filter-btn" data-filter="industrial" style="color:#174094;border-color:#174094;">Industrial</button>
+  </div>
+
+  <!-- Model grid -->
+  <div class="w3-container" style="margin-top:8px; margin-bottom:32px;">
+    <div class="model-grid" id="model-grid"></div>
+  </div>
+
+  <!-- About section -->
+  <div class="w3-container" id="about" style="margin-top:48px;">
+    <h1 class="w3-xxxlarge w3-uwec-text-blue"><b>About This Work</b></h1>
+    <hr style="width:50px;border:5px solid #fdb414" class="w3-round">
+    <p>
+      These models support research in upper-extremity assistive robotics and rehabilitation engineering.
+      Each design is developed with downstream fabrication in mind — tolerances, material selection, and
+      manufacturing method are considered from the first sketch. Models are available in STEP, STL,
+      and native CAD formats on request.
+    </p>
+  </div>
+
+  <!-- Footer (same gold band as RASR site) -->
+  <div class="w3-uwec-gold w3-container w3-padding-32" style="margin-top:75px;padding-right:58px;">
+    <p class="w3-right">© 2025 RASR Lab · University of Wisconsin–Eau Claire</p>
+  </div>
+
+</div><!-- /w3-main -->
+
+
+<!-- ── MODAL ── -->
+<div id="modelModal" class="w3-modal" style="padding-top:40px;">
+  <div class="w3-modal-content w3-animate-zoom w3-card-4" style="max-width:720px;border-radius:6px;overflow:hidden;">
+
+    <!-- viewer with controls overlay -->
+    <div style="position:relative;">
+      <canvas id="modal-canvas" class="modal-viewer"></canvas>
+      <div class="modal-controls">
+        <button class="ctrl-btn" id="ctrl-reset">Reset view</button>
+        <button class="ctrl-btn" id="ctrl-wire">Wireframe</button>
+        <button class="ctrl-btn" id="ctrl-flat">Flat shading</button>
+      </div>
+      <span class="w3-button w3-display-topright w3-uwec-blue"
+            style="font-size:22px;font-weight:bold;" onclick="closeModal()">×</span>
+    </div>
+
+    <div class="w3-container w3-padding-16" id="modal-body">
+      <div id="modal-tags" style="margin-bottom:8px;"></div>
+      <h2 class="w3-uwec-text-blue" id="modal-title" style="margin:4px 0 0;"></h2>
+      <hr style="width:50px;border:4px solid #fdb414;margin:10px 0 12px;" class="w3-round">
+      <p id="modal-desc" style="color:#555;line-height:1.7;"></p>
+      <div class="spec-grid" id="modal-specs"></div>
+      <div style="height:16px;"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Three.js ── -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ══════════════════════════════════════════════
+   MODEL DATA
+   To load a real GLB: set  model: 'path/to/file.glb'
+   Leave  model: null  to keep the placeholder geometry
+   ══════════════════════════════════════════════ */
+const MODELS = [
+  {
+    id: 1, title: 'Precision Valve Housing',
+    desc: 'CNC-machined aluminium valve body designed for high-pressure hydraulic systems. Tolerances held to ±0.01 mm throughout.',
+    tags: ['Mechanical', 'CNC'], category: 'mechanical', geometry: 'valve',
+    specs: { Software: 'Fusion 360', Material: 'AL 6061-T6', Polygons: '48,200', Year: '2024' }, model: null
+  },
+  {
+    id: 2, title: 'Ergonomic Grip Handle',
+    desc: 'Consumer product handle for a hand tool line. Designed for injection moulding with full undercut and draft analysis.',
+    tags: ['Product', 'Plastics'], category: 'product', geometry: 'handle',
+    specs: { Software: 'SolidWorks', Material: 'PA-GF30', Polygons: '22,800', Year: '2024' }, model: null
+  },
+  {
+    id: 3, title: 'Gear Reduction Assembly',
+    desc: 'Three-stage spur gear reduction unit, ratio 1:27. Fully parametric and exportable to STEP for downstream FEA.',
+    tags: ['Mechanical', 'Drivetrain'], category: 'mechanical', geometry: 'gears',
+    specs: { Software: 'Fusion 360', Material: 'Steel 1045', Polygons: '104,600', Year: '2023' }, model: null
+  },
+  {
+    id: 4, title: 'Industrial Pump Body',
+    desc: 'Centrifugal pump housing for chemical-transfer application with integrated flange mounts and pressure venting.',
+    tags: ['Industrial', 'Casting'], category: 'industrial', geometry: 'pump',
+    specs: { Software: 'CATIA V5', Material: 'Cast Iron', Polygons: '67,400', Year: '2023' }, model: null
+  },
+  {
+    id: 5, title: 'Wearable Device Shell',
+    desc: 'Two-part snap-fit enclosure for a medical wearable. Parting line optimised for minimal flash and IP54 sealing.',
+    tags: ['Product', 'Medical'], category: 'product', geometry: 'device',
+    specs: { Software: 'Rhino 7', Material: 'ABS+PC', Polygons: '18,200', Year: '2025' }, model: null
+  },
+  {
+    id: 6, title: 'Bracket & Mounting Plate',
+    desc: 'Welded steel bracket for structural panel mounting. Stress-analysed in Ansys with a factor of safety of 3.2 at rated load.',
+    tags: ['Industrial', 'Structural'], category: 'industrial', geometry: 'bracket',
+    specs: { Software: 'Inventor', Material: 'S275 Steel', Polygons: '9,800', Year: '2025' }, model: null
+  }
+];
+
+/* ── Placeholder geometry builders ── */
+function buildGeometry(type) {
+  const blue  = 0x174094;
+  const steel = 0x8a9ba8;
+  const gold  = 0xd49a10;
+  switch (type) {
+    case 'valve': {
+      const g = new THREE.Group();
+      g.add(new THREE.Mesh(new THREE.CylinderGeometry(0.55,0.55,1.3,32), new THREE.MeshStandardMaterial({color:steel,metalness:0.7,roughness:0.25})));
+      const p1 = new THREE.Mesh(new THREE.CylinderGeometry(0.18,0.18,0.55,16), new THREE.MeshStandardMaterial({color:0x6a7b88,metalness:0.7,roughness:0.3}));
+      p1.rotation.z=Math.PI/2; p1.position.set(0.75,0.3,0);
+      const p2=p1.clone(); p2.position.set(0.75,-0.3,0);
+      const fl=new THREE.Mesh(new THREE.CylinderGeometry(0.68,0.68,0.12,32), new THREE.MeshStandardMaterial({color:0x5a6b78,metalness:0.6,roughness:0.3}));
+      fl.position.y=0.71; g.add(p1,p2,fl); return g;
+    }
+    case 'handle': {
+      const g=new THREE.Group(), pts=[];
+      for(let i=0;i<=20;i++){const t=i/20; pts.push(new THREE.Vector2(0.18+Math.sin(t*Math.PI)*0.06,t*1.6-0.8));}
+      g.add(new THREE.Mesh(new THREE.LatheGeometry(pts,24), new THREE.MeshStandardMaterial({color:blue,roughness:0.5,metalness:0.1})));
+      const cap=new THREE.Mesh(new THREE.SphereGeometry(0.18,16,16), new THREE.MeshStandardMaterial({color:0x0a2a60,roughness:0.45}));
+      cap.position.y=-0.8; g.add(cap); return g;
+    }
+    case 'gears': {
+      const g=new THREE.Group();
+      function gear(r,t,z){
+        const s=new THREE.Shape();
+        for(let i=0;i<t;i++){
+          const a=i/t*Math.PI*2,b=(i+0.4)/t*Math.PI*2,c=(i+0.6)/t*Math.PI*2,d=(i+1)/t*Math.PI*2;
+          const f=(a,r)=>[Math.cos(a)*r,Math.sin(a)*r];
+          if(i===0)s.moveTo(...f(a,r));else s.lineTo(...f(a,r));
+          s.lineTo(...f(b,r+0.12));s.lineTo(...f(c,r+0.12));s.lineTo(...f(d,r));
+        }
+        s.closePath(); return new THREE.ExtrudeGeometry(s,{depth:z,bevelEnabled:false});
+      }
+      const m1=new THREE.MeshStandardMaterial({color:steel,metalness:0.6,roughness:0.3});
+      const m2=new THREE.MeshStandardMaterial({color:0x6a7b88,metalness:0.65,roughness:0.25});
+      const g1=new THREE.Mesh(gear(0.5,16,0.18),m1);
+      const g2=new THREE.Mesh(gear(0.3,10,0.18),m2); g2.position.set(0.85,0,0);
+      const g3=new THREE.Mesh(gear(0.2,7,0.18),m2); g3.position.set(1.45,0.3,0);
+      g.add(g1,g2,g3); g.position.set(-0.7,-0.15,-0.09); return g;
+    }
+    case 'pump': {
+      const g=new THREE.Group();
+      g.add(new THREE.Mesh(new THREE.CylinderGeometry(0.7,0.6,0.8,32), new THREE.MeshStandardMaterial({color:blue,roughness:0.5,metalness:0.2})));
+      const inlet=new THREE.Mesh(new THREE.CylinderGeometry(0.22,0.22,0.6,16), new THREE.MeshStandardMaterial({color:0x0050a0,roughness:0.4,metalness:0.3}));
+      inlet.position.set(0,0.7,0);
+      const outlet=new THREE.Mesh(new THREE.CylinderGeometry(0.16,0.16,0.5,16), new THREE.MeshStandardMaterial({color:0x0050a0,roughness:0.4,metalness:0.3}));
+      outlet.rotation.z=Math.PI/2; outlet.position.set(0.72,0.1,0);
+      const base=new THREE.Mesh(new THREE.BoxGeometry(1.6,0.12,1.1), new THREE.MeshStandardMaterial({color:0x002050,roughness:0.6,metalness:0.2}));
+      base.position.y=-0.46; g.add(inlet,outlet,base); return g;
+    }
+    case 'device': {
+      const g=new THREE.Group();
+      g.add(new THREE.Mesh(new THREE.BoxGeometry(1.0,1.4,0.28), new THREE.MeshStandardMaterial({color:0xdde3ec,roughness:0.3,metalness:0.05})));
+      const scr=new THREE.Mesh(new THREE.BoxGeometry(0.78,0.9,0.01), new THREE.MeshStandardMaterial({color:0x1a1a18,roughness:0.1}));
+      scr.position.set(0,0.1,0.145);
+      const btn=new THREE.Mesh(new THREE.CylinderGeometry(0.06,0.06,0.04,16), new THREE.MeshStandardMaterial({color:gold,roughness:0.3}));
+      btn.rotation.x=Math.PI/2; btn.position.set(0.38,0,0.14);
+      g.add(scr,btn); return g;
+    }
+    case 'bracket': {
+      const g=new THREE.Group();
+      const mat=new THREE.MeshStandardMaterial({color:steel,metalness:0.5,roughness:0.4});
+      g.add(new THREE.Mesh(new THREE.BoxGeometry(1.4,0.1,0.9),mat));
+      const arm=new THREE.Mesh(new THREE.BoxGeometry(0.1,0.8,0.9),mat); arm.position.set(-0.65,0.45,0);
+      const gu=new THREE.Mesh(new THREE.BoxGeometry(0.55,0.55,0.08), new THREE.MeshStandardMaterial({color:0x7a8b98,metalness:0.5,roughness:0.4}));
+      gu.rotation.z=-Math.PI/4; gu.position.set(-0.45,0.28,0);
+      g.add(arm,gu); return g;
+    }
+    default: return new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshStandardMaterial({color:0x888}));
+  }
+}
+
+/* ── Shared viewer factory ── */
+function makeViewer(canvas, modelData, opts={}) {
+  const w=canvas.clientWidth||canvas.offsetWidth, h=canvas.clientHeight||canvas.offsetHeight;
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.setSize(w,h); renderer.outputEncoding=THREE.sRGBEncoding;
+
+  const scene=new THREE.Scene(); scene.background=new THREE.Color(0xeef1f5);
+  const camera=new THREE.PerspectiveCamera(38,w/h,0.01,100);
+  camera.position.set(2.2,1.4,2.2); camera.lookAt(0,0,0);
+
+  scene.add(new THREE.AmbientLight(0xffffff,0.5));
+  const key=new THREE.DirectionalLight(0xffffff,0.9); key.position.set(3,5,3); scene.add(key);
+  const fill=new THREE.DirectionalLight(0xd0d8e8,0.4); fill.position.set(-3,2,-3); scene.add(fill);
+  const rim=new THREE.DirectionalLight(0xfdb414,0.2); rim.position.set(0,3,-4); scene.add(rim);
+  const grid=new THREE.GridHelper(4,20,0xd0d4dc,0xdde1e8); grid.position.y=-0.85; scene.add(grid);
+
+  const obj=buildGeometry(modelData.geometry); scene.add(obj);
+
+  let isDragging=false, lastX=0, lastY=0, rotX=0.3, rotY=0.4, zoom=2.2;
+  let wireframe=false, flatShading=false, autoRotate=true, idleTimer;
+
+  const setRot=()=>{
+    camera.position.set(zoom*Math.sin(rotY)*Math.cos(rotX), zoom*Math.sin(rotX)+0.5, zoom*Math.cos(rotY)*Math.cos(rotX));
+    camera.lookAt(0,0.1,0);
+  };
+  setRot();
+
+  const stopAuto=()=>{ autoRotate=false; clearTimeout(idleTimer); idleTimer=setTimeout(()=>autoRotate=true,3000); };
+
+  canvas.addEventListener('mousedown',e=>{ isDragging=true; lastX=e.clientX; lastY=e.clientY; canvas.parentElement&&canvas.parentElement.classList.add('interacted'); stopAuto(); });
+  window.addEventListener('mouseup',()=>isDragging=false);
+  window.addEventListener('mousemove',e=>{ if(!isDragging)return; rotY+=(e.clientX-lastX)*0.008; rotX=Math.max(-1.2,Math.min(1.2,rotX+(e.clientY-lastY)*0.008)); lastX=e.clientX; lastY=e.clientY; setRot(); });
+  canvas.addEventListener('wheel',e=>{ zoom=Math.max(0.8,Math.min(6,zoom+e.deltaY*0.004)); setRot(); e.preventDefault(); },{passive:false});
+
+  let tLast=null;
+  canvas.addEventListener('touchstart',e=>{ tLast={x:e.touches[0].clientX,y:e.touches[0].clientY}; canvas.parentElement&&canvas.parentElement.classList.add('interacted'); stopAuto(); },{passive:true});
+  canvas.addEventListener('touchmove',e=>{ if(!tLast)return; rotY+=(e.touches[0].clientX-tLast.x)*0.009; rotX=Math.max(-1.2,Math.min(1.2,rotX+(e.touches[0].clientY-tLast.y)*0.009)); tLast={x:e.touches[0].clientX,y:e.touches[0].clientY}; setRot(); },{passive:true});
+
+  if(opts.resetBtn) opts.resetBtn.onclick=()=>{ rotX=0.3; rotY=0.4; zoom=2.2; setRot(); };
+  if(opts.wireBtn) opts.wireBtn.onclick=()=>{ wireframe=!wireframe; obj.traverse(c=>{ if(c.isMesh) c.material.wireframe=wireframe; }); opts.wireBtn.textContent=wireframe?'Solid':'Wireframe'; };
+  if(opts.flatBtn) opts.flatBtn.onclick=()=>{ flatShading=!flatShading; obj.traverse(c=>{ if(c.isMesh){ c.material.flatShading=flatShading; c.material.needsUpdate=true; } }); opts.flatBtn.textContent=flatShading?'Smooth':'Flat shading'; };
+
+  let frame;
+  const animate=()=>{ frame=requestAnimationFrame(animate); if(autoRotate){ rotY+=0.005; setRot(); } renderer.render(scene,camera); };
+  animate();
+
+  const ro=new ResizeObserver(()=>{ const nw=canvas.clientWidth,nh=canvas.clientHeight; renderer.setSize(nw,nh); camera.aspect=nw/nh; camera.updateProjectionMatrix(); });
+  ro.observe(canvas);
+
+  return { dispose:()=>{ cancelAnimationFrame(frame); renderer.dispose(); ro.disconnect(); } };
+}
+
+/* ── Build cards ── */
+const gridEl=document.getElementById('model-grid');
+const viewers=[];
+
+function renderCards(filter='all') {
+  gridEl.innerHTML=''; viewers.forEach(v=>v.dispose()); viewers.length=0;
+  const list=filter==='all'?MODELS:MODELS.filter(m=>m.category===filter);
+  list.forEach(m=>{
+    // Card shell (w3-card like the lab site team cards)
+    const card=document.createElement('div');
+    card.className='w3-card model-card';
+
+    // Viewer wrap
+    const wrap=document.createElement('div'); wrap.className='viewer-wrap';
+    const canvas=document.createElement('canvas'); canvas.className='model-viewer';
+    const hint=document.createElement('div'); hint.className='drag-hint'; hint.textContent='drag · scroll';
+    wrap.appendChild(canvas); wrap.appendChild(hint);
+
+    // Card body (gold header strip like team cards)
+    const body=document.createElement('div');
+    body.className='w3-container w3-uwec-gold';
+    body.style.padding='10px 16px 12px';
+    body.innerHTML=`
+      <div style="margin-bottom:5px;">${m.tags.map(t=>`<span class="tag-pill">${t}</span>`).join('')}</div>
+      <h3 style="margin:0 0 2px;color:#002b52;">${m.title}</h3>
+      <p class="w3-opacity" style="margin:0;font-size:13px;color:#333;">${m.specs.Software} · ${m.specs.Year}</p>`;
+
+    const footer=document.createElement('div');
+    footer.className='w3-container';
+    footer.style.padding='10px 16px 12px';
+    footer.innerHTML=`
+      <p style="font-size:13px;color:#555;margin:0 0 8px;">${m.desc.length>90?m.desc.slice(0,90)+'…':m.desc}</p>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:11px;color:#999;">${m.specs.Polygons} polys</span>
+        <a class="expand-link" href="#" data-id="${m.id}">Expand ↗</a>
+      </div>`;
+
+    card.appendChild(wrap); card.appendChild(body); card.appendChild(footer);
+    gridEl.appendChild(card);
+
+    requestAnimationFrame(()=>{ const v=makeViewer(canvas,m); viewers.push(v); });
+    footer.querySelector('.expand-link').addEventListener('click',e=>{ e.preventDefault(); openModal(m); });
+    wrap.addEventListener('dblclick',()=>openModal(m));
+  });
+}
+
+/* ── Modal ── */
+let modalViewer=null;
+function openModal(m) {
+  if(modalViewer){ modalViewer.dispose(); modalViewer=null; }
+  document.getElementById('modal-title').textContent=m.title;
+  document.getElementById('modal-desc').textContent=m.desc;
+  document.getElementById('modal-tags').innerHTML=m.tags.map(t=>`<span class="tag-pill">${t}</span>`).join('');
+  document.getElementById('modal-specs').innerHTML=Object.entries(m.specs).map(([k,v])=>`
+    <div class="spec-item"><div class="spec-label">${k}</div><div class="spec-value">${v}</div></div>`).join('');
+  document.getElementById('modelModal').style.display='block';
+  requestAnimationFrame(()=>{
+    const canvas=document.getElementById('modal-canvas');
+    modalViewer=makeViewer(canvas,m,{
+      resetBtn:document.getElementById('ctrl-reset'),
+      wireBtn:document.getElementById('ctrl-wire'),
+      flatBtn:document.getElementById('ctrl-flat')
+    });
+  });
+}
+function closeModal() {
+  document.getElementById('modelModal').style.display='none';
+  if(modalViewer){ modalViewer.dispose(); modalViewer=null; }
+}
+document.getElementById('modelModal').addEventListener('click',e=>{ if(e.target===document.getElementById('modelModal')) closeModal(); });
+
+/* ── Filter buttons ── */
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>{
+      b.classList.remove('w3-uwec-blue','active-filter');
+      b.style.color='#174094'; b.style.borderColor='#174094'; b.style.backgroundColor='';
+    });
+    btn.classList.add('w3-uwec-blue','active-filter');
+    btn.style.color=''; btn.style.borderColor='';
+    renderCards(btn.dataset.filter);
+  });
+});
+
+/* ── Sidebar (same as RASR site) ── */
+function w3_open(){
+  document.getElementById('mySidebar').style.display='block';
+  document.getElementById('myOverlay').style.display='block';
+}
+function w3_close(){
+  document.getElementById('mySidebar').style.display='none';
+  document.getElementById('myOverlay').style.display='none';
+}
+
+renderCards();
+</script>
+</body>
+</html>

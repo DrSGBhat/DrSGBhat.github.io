@@ -1,6 +1,6 @@
 ---
-title: "RASaR Lab"
-permalink: /RASaR/
+title: "RASR Lab"
+permalink: /RASR/
 author_profile: false
 layout: RASR
 ---
