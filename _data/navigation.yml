@@ -24,8 +24,8 @@ main:
   # - title: "My Travel"
   #   url: /mytravel/
 
-  - title: "RASaR Lab"
-    url: /RASaR/
+  - title: "RASR Lab"
+    url: /RASR/
 
   - title: "Contact"
     url: /contact/  
