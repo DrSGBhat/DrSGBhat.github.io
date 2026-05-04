@@ -6,16 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://drsgbhat.github.io/assets/css/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible">
-
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Atkinson+Hyperlegible", sans-serif}
 body {font-size:16px;}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
-
-/* Filter buttons */
-  .filter-btn { margin: 4px 4px 4px 0; border-radius: 20px !important; font-weight: bold; font-size: 13px; }
-
 </style>
 </head>
 <body>
@@ -86,13 +81,6 @@ body {font-size:16px;}
     <hr style="width:50px;border:5px solid #fdb414" class="w3-round">
   </div>
 
-<!-- Filter bar -->
-  <div class="w3-container" style="margin-top:24px;">
-    <button class="w3-button w3-uwec-blue w3-round filter-btn active-filter" data-filter="all">All</button>
-    <button class="w3-button w3-border w3-round filter-btn" data-filter="product" style="color:#174094;border-color:#174094;">Faculty</button>
-    <button class="w3-button w3-border w3-round filter-btn" data-filter="mechanical" style="color:#174094;border-color:#174094;">Students in 2026</button>
-  </div>
-  
 <!-- The Team -->
   <div class="w3-row-padding">
     <div class="w3-col m3 w3-margin-bottom">
@@ -104,6 +92,16 @@ body {font-size:16px;}
         </div>
       </div>
     </div>
+
+    <div class="w3-col m3 w3-margin-bottom">
+      <div class="w3-card w3-uwec-gold">
+        <img src="https://drsgbhat.github.io/images/profile.png" alt="Harrison" style="width:100%">
+        <div class="w3-container">
+          <h3>Harrison Shepich</h3>
+          <p class="w3-opacity">Research Assistant</p>
+        </div>
+      </div>
+    </div>
     
     <div class="w3-col m3 w3-margin-bottom">
       <div class="w3-card w3-uwec-gold">
@@ -111,6 +109,17 @@ body {font-size:16px;}
         <div class="w3-container">
           <h3>Nora McGowan</h3>
           <p class="w3-opacity">Research Assistant</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-col m3 w3-margin-bottom">
+      <div class="w3-card w3-uwec-gold">
+        <img src="https://drsgbhat.github.io/images/profile.png" alt="Landon" style="width:100%">
+        <div class="w3-container">
+          <h3>Landon Ruby</h3>
+          <p class="w3-opacity">Research Assistant</p>
+          
         </div>
       </div>
     </div>
@@ -149,19 +158,6 @@ body {font-size:16px;}
 
 <script>
 // Script to open and close sidebar
-/* ── Filter buttons ── */
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>{
-      b.classList.remove('w3-uwec-blue','active-filter');
-      b.style.color='#174094'; b.style.borderColor='#174094'; b.style.backgroundColor='';
-    });
-    btn.classList.add('w3-uwec-blue','active-filter');
-    btn.style.color=''; btn.style.borderColor='';
-    renderCards(btn.dataset.filter);
-  });
-});
-
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
   document.getElementById("myOverlay").style.display = "block";
