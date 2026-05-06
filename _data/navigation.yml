@@ -25,7 +25,7 @@ main:
   #   url: /mytravel/
 
   - title: "RASR Lab"
-    url: /RASR/
+    url: https://rasr-lab.github.io/
 
   - title: "Contact"
     url: /contact/  
