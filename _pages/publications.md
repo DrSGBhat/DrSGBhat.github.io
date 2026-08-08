@@ -6,7 +6,23 @@ author_profile: true
 <br>
 For proper citations, refer [Google Scholar](https://scholar.google.com/citations?user=Dx9aVjgAAAAJ&hl=en)<br>
 <br>
-updated: 10/9/2025
+updated: 8/7/2026
+
+## 2026
+29. <b>Impact of Anterior Load Carriage on Dynamic Sagittal Spinal Alignment: A Comparative Study Between Individuals Below and Above 65 Years</b><br>
+	In-press<br>
+	<i>Military Medicine</i>.
+
+28. <b>[Empowering Movement: A Human-in-the-Loop Proportional Controller for Assisted Elbow Flexion in Brachial Plexus Injury](http://DrSGBhat.github.io/publications/MM26)</b><br>
+	<i><b>Sandesh G Bhat</b></i>, Alexander Shin, Kenton Kaufman.<br>
+	<i>Military Medicine</i>.
+
+27. <b>[Estimation of Endurance During Elbow Flexion with Myoelectric Orthotic Assistance](http://DrSGBhat.github.io/publications/APMR26)</b><br>
+	<i><b>Sandesh G Bhat</b></i>, Devin Nuckles, Alexander Shin, Kenton Kaufman.<br>
+	<i>Archives of Physical Medicine and Rehabilitation</i>.
+
+26. <b>Impact of frailty on gait outcomes in idiopathic normal pressure hydrocephalus after shunting</b><br>
+	<i>Clinical Neurology and Neurosurgery</i>.
 
 ## 2025
 25. <b>[Dynamic Stability Analysis of Progressive Supranuclear Palsy affected gait using Lyapunov Floquet Theory](http://DrSGBhat.github.io/publications/TNSRE_PSP25)</b><br>

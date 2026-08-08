@@ -5,9 +5,14 @@ author_profile: true
 ---
 
 <br>
-updated: 10/9/2025
+updated: 8/7/2026
 
-6. General Physics (PHYS 211) <i>Fall 2025</i><br>
+7. Introduction to Robotics (ASRE 150) <i>Spring 2026</i><br>
+	<b>Lecturer</b> (in-person)<br>
+	Physics and Astronomy Department, College of Arts and Sciences <br>
+	University of Wisconsin-Eau Claire, Eau Claire, WI.
+
+6. General Physics (PHYS 211) <i>2025 - 26</i><br>
 	<b>Lecturer</b> (in-person)<br>
 	Physics and Astronomy Department, College of Arts and Sciences <br>
 	University of Wisconsin-Eau Claire, Eau Claire, WI.
