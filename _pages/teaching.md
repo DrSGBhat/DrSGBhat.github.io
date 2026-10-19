@@ -1,5 +1,6 @@
 ---
 title: "Teaching"
+description: "Courses taught by Sandesh G. Bhat at the University of Wisconsin–Eau Claire, Mayo Clinic, and Arizona State University."
 permalink: /teaching/
 author_profile: true
 ---

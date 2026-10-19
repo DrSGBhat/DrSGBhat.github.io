@@ -2,6 +2,7 @@
 title: "My Travels"
 permalink: /mytravel/
 author_profile: true
+sitemap: false
 ---
 <br>
 A journey of a thousand miles begins with a single step.<br>

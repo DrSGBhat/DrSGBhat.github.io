@@ -1,0 +1,14 @@
+# macOS and editor clutter
+.DS_Store
+.Rhistory
+*.swp
+
+# Jekyll build output and caches
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Local Ruby gems
+.bundle/
+vendor/

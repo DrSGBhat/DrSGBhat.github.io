@@ -1,5 +1,6 @@
 ---
 title: "Service"
+description: "Academic, professional, and community service by Sandesh G. Bhat, including peer review and IEEE EMBS leadership."
 permalink: /service/
 author_profile: true
 ---
@@ -23,8 +24,8 @@ updated: 8/7/2026
 		* IEEE Robotics and Automation Letters (2020)
 	* <i>Conferences</i>
 		* American Society of Biomechanics (2024 - 2025)
-		* IEEE Interantional Conference on Robotics and Automation (2020)
-		* IEEE Interantional Conference on Intelligent Robots and Systems (2020)
+		* IEEE International Conference on Robotics and Automation (2020)
+		* IEEE International Conference on Intelligent Robots and Systems (2020)
 
 * <b>Graduate Symposium Judge</b> (2023-2024)
 	* <i>Mayo Clinic Graduate School of Biomedical Sciences, Mayo Clinic, Rochester, MN</i>

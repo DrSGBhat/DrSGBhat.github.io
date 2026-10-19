@@ -1,5 +1,6 @@
 ---
 title: "Presentations"
+description: "Conference talks, invited presentations, and posters by Sandesh G. Bhat."
 permalink: /presentations/
 author_profile: true
 ---
@@ -98,12 +99,12 @@ updated: 10/9/2025
 	<i>Finalist</i>, 2024 Jennifer Jowsey Research Fellow Award<br>
 	Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
 
-3. <b>Real-world evidence-based Mmeasurement of upper extremity ectivity</b><br>
+3. <b>Real-world evidence-based measurement of upper extremity activity</b><br>
 	January, 2024 <br>
 	<i>Featured Online Presenter</i>, Musculoskeletal Research Conference<br>
 	Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
 
-2. <b>Voluntary control of gracilis free functioning muscle transfer for elbow Fflexion</b><br>
+2. <b>Voluntary control of gracilis free functioning muscle transfer for elbow flexion</b><br>
 	October, 2023 <br>
 	<i>Finalist</i>, 2023 Jennifer Jowsey Research Fellow Award<br>
 	Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
@@ -116,7 +117,7 @@ updated: 10/9/2025
 ## Poster
 3. <b>The role of neuromuscular control and electromyographic properties in maximum voluntary contraction of the muscle after brachial plexus injury</b><br>
 	July, 2025<br>
-	2024 Physiology and Biomedical Engineering Symposium<br>
+	2025 Physiology and Biomedical Engineering Symposium<br>
 	Department of Physiology and Biomedical Engineering, Mayo Clinic, Rochester, MN.
 
 2. <b>Analysis of dynamic stability in patients with progressive supranuclear palsy</b><br>
@@ -124,7 +125,7 @@ updated: 10/9/2025
 	2024 Physiology and Biomedical Engineering Symposium<br>
 	Department of Physiology and Biomedical Engineering, Mayo Clinic, Rochester, MN.
 
-1. <b>Design and development of a powered myelectric elbow orthosis for neuromuscular injuries and conditions</b><br>
+1. <b>Design and development of a powered myoelectric elbow orthosis for neuromuscular injuries and conditions</b><br>
 	September, 2023 <br>
 	Young Investigators Research Symposium<br>
 	School of Continuous Professional Development, Mayo Clinic, Rochester, MN.

@@ -1,6 +1,7 @@
 ---
 <!-- layout: archive -->
 title: "Sandesh Bhat"
+description: "Curriculum vitae of Sandesh G. Bhat: education, academic appointments at UW–Eau Claire and Mayo Clinic, honors, and skills."
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -55,7 +56,7 @@ Honors and Awards
 * Finalist, Jennifer Jowsey Research Fellow Award, 2024
 	* Department of Orthopedic Surgery, Mayo Clinic.
 
-* Kelly Reseach Fellow, 2023 - 24
+* Kelly Research Fellow, 2023 - 24
 	* Department of Orthopedic Surgery, Mayo Clinic.
 
 * Finalist, Jennifer Jowsey Research Fellow Award, 2023

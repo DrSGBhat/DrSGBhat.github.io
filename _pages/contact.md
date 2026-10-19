@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "Contact"
+description: "How to contact Sandesh G. Bhat, Assistant Professor at the University of Wisconsin–Eau Claire."
 permalink: /contact/
 author_profile: true
 ---

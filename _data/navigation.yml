@@ -28,7 +28,4 @@ main:
     url: https://rasr-lab.github.io/
 
   - title: "Contact"
-    url: /contact/  
-    
-  # - title: "Guide"
-    # url: /markdown/
+    url: /contact/

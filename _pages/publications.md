@@ -1,5 +1,6 @@
 ---
 title: "Publications"
+description: "Journal articles, conference papers, and theses by Sandesh G. Bhat on upper extremity orthoses, brachial plexus injury, gait dynamics, and rehabilitation robotics."
 permalink: /publications/
 author_profile: true
 ---
