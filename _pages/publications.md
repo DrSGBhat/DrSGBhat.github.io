@@ -3,134 +3,30 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-<br>
-For proper citations, refer [Google Scholar](https://scholar.google.com/citations?user=Dx9aVjgAAAAJ&hl=en)<br>
-<br>
-updated: 8/7/2026
 
-## 2026
-29. <b>Impact of Anterior Load Carriage on Dynamic Sagittal Spinal Alignment: A Comparative Study Between Individuals Below and Above 65 Years</b><br>
-	In-press<br>
-	<i>Military Medicine</i>.
+{% include base_path %}
 
-28. <b>[Empowering Movement: A Human-in-the-Loop Proportional Controller for Assisted Elbow Flexion in Brachial Plexus Injury](http://DrSGBhat.github.io/publications/MM26)</b><br>
-	<i><b>Sandesh G Bhat</b></i>, Alexander Shin, Kenton Kaufman.<br>
-	<i>Military Medicine</i>.
+For proper citations, refer to [Google Scholar](https://scholar.google.com/citations?user=Dx9aVjgAAAAJ&hl=en).<br>
+updated: 10/19/2026
 
-27. <b>[Estimation of Endurance During Elbow Flexion with Myoelectric Orthotic Assistance](http://DrSGBhat.github.io/publications/APMR26)</b><br>
-	<i><b>Sandesh G Bhat</b></i>, Devin Nuckles, Alexander Shin, Kenton Kaufman.<br>
-	<i>Archives of Physical Medicine and Rehabilitation</i>.
+{% comment %} Entries live in _data/publications.yml {% endcomment %}
+{% assign pubs = site.data.publications %}
+{% assign number = pubs | size %}
+{% assign years = pubs | group_by: "year" %}
+{% for year in years %}
+## {{ year.name }}
 
-26. <b>Impact of frailty on gait outcomes in idiopathic normal pressure hydrocephalus after shunting</b><br>
-	<i>Clinical Neurology and Neurosurgery</i>.
-
-## 2025
-25. <b>[Dynamic Stability Analysis of Progressive Supranuclear Palsy affected gait using Lyapunov Floquet Theory](http://DrSGBhat.github.io/publications/TNSRE_PSP25)</b><br>
-	<i><b>Sandesh G Bhat</b></i>, Farwa Ali, Cecilia Hogen, Asghar Rezaei, Keith Josephs, Jennifer Whitwell, Kenton Kaufman.<br>
-	<i>IEEE Transactions on Neural Systems and Rehabilitation Engineering</i>.
-
-24. <b>[Patient-Reported Outcome Measures used in Clinical Trials of an Elbow Orthosis: A Scoping Review](http://DrSGBhat.github.io/publications/POI25)</b><br>
-	Hadley Ninow, Apurba Barman, <i><b>Sandesh G Bhat</b></i>, Gwen Wilson, Kenton Kaufman.<br>
-	<i>Prosthetics and Orthotics International</i>.
-
-23. <b>[Real-World Evidence-Based Outcomes to Measure Upper Extremity Activity in The Brachial Plexus Injury Population](http://DrSGBhat.github.io/publications/EJOST25)</b><br>
-	<i><b>Sandesh G Bhat</b></i>, Alexander Shin, Kenton Kaufman.<br>
-	<i>European Journal of Orthopaedic Surgery and Traumatology</i>.
-
-22. <b>[Spinal Accessory Nerve vs Intercostal Nerves in Gracilis Free Functioning Muscle Transfer for Elbow Flexion in Adult Brachial Plexus Patients](http://DrSGBhat.github.io/publications/JHS25)</b><br>
-	<i><b>Sandesh G Bhat</b></i>, Allen Bishop, Robert Spinner, Kenton Kaufman, Alexander Shin.<br>
-	<i>Journal of Hand Surgery</i>.
-
-21. <b>[Evaluating Longitudinal Changes of Gait Parameters Following Shunt Placement in Patients with Idiopathic Normal Pressure Hydrocephalus](http://DrSGBhat.github.io/publications/JNS25)</b><br>
-	 Rahul Kumar, Abdelrahman M. Hamouda, Zach Pennington, Maria D. Astudillo Potes, Mahnoor Shafi, Hana Hallak, <i><b>Sandesh G. Bhat</b></i>, Asghar Rezaei, Ignacio Jusué-Torres, Jonathan Graff-Radford, David T. Jones, Hugo Botha, Jeremy K. Cutsforth-Gregory, Farwa Ali, Petrice M. Cogswell, Kenton R. Kaufman, Benjamin D. Elder.<br>
-	<i>Journal of Neurosurgery</i>.
-
-20. <b>[Enhanced Functionality Using a Powered Upper Extremity Exoskeleton in Patients with Brachial Plexus Injuries](http://DrSGBhat.github.io/publications/TNSRE25)</b> <br>
-	<i><b>Sandesh G Bhat</b></i>, Emily Miller, Paul Kane, Kevin Hollander, Claudio Vignola, Alexander Shin, Thomas Sugar, Kenton Kaufman.<br>
-	<i>IEEE Transactions on Neural Systems and Rehabilitation Engineering</i>.
-
-## 2024
-19. <b>[Myoelectric performance of the reconstructed elbow flexor in patients with brachial plexus injuries](http://DrSGBhat.github.io/publications/JEK24)</b> <br>
-	Emily Miller, <i><b>Sandesh G Bhat</b></i>, Paul Kane, Alexander Shin, Kenton Kaufman.<br>
-	<i>Journal of Electromyography and Kinesiology</i>.
-
-18. <b>[Dynamical systems theory applied to short walking trials](http://DrSGBhat.github.io/publications/JOB24)</b> <br>
-	<i><b>Sandesh G Bhat</b></i>, Kenton Kaufman.<br>
-	<i>Journal of Biomechanics</i>.
-
-17. <b>[Age-related changes in gait, balance, and strength parameters: A cross-sectional study](http://DrSGBhat.github.io/publications/PlosOne24)</b> <br>
-	Asghar Rezaei, <i><b>Sandesh G Bhat</b></i>, Chih-Hsiu Cheng, Robert Pignolo, Lichun Lu, Kenton Kaufman.<br>
-	<i>PLOS ONE</i>.
-
-16. <b>[Design and Development of a Powered Myoelectric Elbow Orthosis for Neuromuscular Injuries](http://DrSGBhat.github.io/publications/MM24)</b> <br>
-	Claudio Vignola, <i><b>Sandesh G Bhat</b></i>, Kevin Hollander, Paul Kane, Emily Miller, W. Brandon Martin, Alexander Shin, Thomas Sugar, Kenton Kaufman.<br>
-	<i>Military Medicine</i>.
-
-## 2023
-15. <b>[Upper extremity asymmetry due to nerve injuries or central neurologic conditions: a scoping review](http://DrSGBhat.github.io/publications/JNER23)</b> <br>
-	<i><b>Sandesh G Bhat</b></i>, Alexander Shin, Kenton Kaufman.<br>
-	<i>Journal of Neuroengineering and Rehabilitation</i>.
-
-14. <b>[Characterization of elbow flexion torque after nerve reconstruction of patients with traumatic brachial plexus injury](http://DrSGBhat.github.io/publications/ClinBio23)</b> <br>
-	<i><b>Sandesh G Bhat</b></i>, Eric Noonan, Griffin Mess, Emily Miller, Alexander Shin, Kenton Kaufman.<br>
-	<i>Clinical Biomechanics</i>.
-
-13. <b>[Muscle activation for targeted elbow force production following surgical reconstruction in adults with brachial plexus injury](http://DrSGBhat.github.io/publications/JOR23)</b> <br>
-	<i><b>Sandesh G Bhat</b></i>, Emily Miller, Alexander Shin, Kenton Kaufman.<br>
-	<i>Journal of Orthopaedic Research</i>.
-
-## 2022
-12. <b>[Applications of symbolically computed Lyapunov-Floquet transformation](http://DrSGBhat.github.io/publications/IJNDC22)</b> <br>
-	Susheelkumar Subramanian, <i><b>Sandesh G Bhat</b></i>, Sangram Redkar.<br>
-	<i>International Journal of Nonlinear Dynamics and Control</i>.
-
-11. <b>[Order reduction of nonlinear quasi-periodic systems subjected to external excitations](http://DrSGBhat.github.io/publications/IJNLMorder)</b> <br>
-	<i><b>Sandesh G Bhat</b></i>, Susheelkumar Subramanian, Sangram Redkar.<br>
-	<i>International Journal of Non-Linear Mechanics</i>.
-
-## 2021
-10. <b>[Application of Floquet Theory to Human Gait Kinematics and Dynamics](http://DrSGBhat.github.io/publications/JMRanalysis)</b> <br> 
-	<b><i>Sandesh G. Bhat</i></b>, Susheelkumar Subramanian, Thomas Sugar, Sangram Redkar.<br>
-	<i>Journal of Mechanisms and Robotics</i>.
-
-9. <b>[Dynamical Systems Theory and its Application to Human Gait Analysis](http://DrSGBhat.github.io/publications/PhDdiss)</b> <br> 
-	<i><b>Sandesh G Bhat</b></i>.<br>
-	<i>PhD Dissertation, Arizona State University</i>.
-
-## 2020
-8. <b>[Reconstruction Of Ground Reaction Force Data Using Lyapunov Floquet Theory And Invariant Manifold Theory](http://DrSGBhat.github.io/publications/IDETCgrfrecon)</b> <br> 
-	<b><i>Sandesh G. Bhat</i></b>, Thomas Sugar, Sangram Redkar.<br>
-	<i>ASME 2020 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference</i>. <b>IDETC-CIE 2020</b>.
-
-7. <b>[Invariant Manifolds In Human Joint Angle Analysis During Walking Gait](http://DrSGBhat.github.io/publications/IDETCinvariant)</b> <br> 
-	<b><i>Sandesh G. Bhat</i></b>, Thomas Sugar, Sangram Redkar.<br>
-	<i>ASME 2020 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference</i>. <b>IDETC-CIE 2020</b>.
-
-## 2019
-6. <b>[Design and Analysis of an Auto-Parametrically Excited Platform for Active Vibration Control](http://DrSGBhat.github.io/publications/IDETCthao)</b> <br> 
-	Thao Le, <i><b>Sandesh G Bhat</b></i>, Susheelkumar Subramanian, Peter Waswa, Sangram Redkar.<br>
-	<i>ASME 2019 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference</i>. <b>IDETC-CIE 2019</b>.
-
-5. <b>[Analysis of a periodic force applied to the trunk to assist walking gait](http://DrSGBhat.github.io/publications/WearRA)</b> <br> 
-	<i><b>Sandesh G Bhat</b></i>, Susheelkumar Cherangara, Jason Olson, Sangram Redkar, Thomas Sugar.<br>
-	<i>2019 Wearable Robotics Association Conference</i>. <b>WearRAcon 2019</b>.
-
-## 2018
-4. <b>[Volitional control of an active prosthetic ankle: a survey](http://DrSGBhat.github.io/publications/IRAJsurvey)</b> <br> 
-	<i><b>Sandesh G Bhat</b></i>, Sangram Redkar.<br>
-	<i>International Robotics &amp; Automation Journal</i>.
-
-3. <b>[Design and Development of an Unmanned Underwater Vehicle (UUV) in the Form of a Cuttlefish](http://DrSGBhat.github.io/publications/IMECEuuv)</b> <br> 
-	Susheelkumar Cherangara Subramanian, Thao Le, Jason Olson, <i><b>Sandesh G Bhat</b></i>, Sangram Redkar.<br>
-	<i>ASME 2018 International Mechanical Engineering Congress and Exposition</i>. <b>IMECE 2018</b>.
-
-2. <b>[Development of a Passive Prosthetic Ankle With Slope Adapting Capabilities](http://DrSGBhat.github.io/publications/IMECEankle)</b> <br> 
-	<i><b>Sandesh G Bhat</b></i>, Sangram Redkar, Thomas Sugar.<br>
-	<i>ASME 2018 International Mechanical Engineering Congress and Exposition</i>. <b>IMECE 2018</b>.
-
-
-## 2017 
-1. <b>[Design and Development of a Passive Prosthetic Ankle](http://DrSGBhat.github.io/publications/MStheses)</b> <br> 
-	<i><b>Sandesh G Bhat</b></i>.<br>
-	<i>Master of Science Theses, Arizona State University</i>.
-
+<ol class="publication-list" reversed start="{{ number }}">
+{%- for pub in year.items %}
+  {%- if pub.page %}{% capture link %}{{ base_path }}{{ pub.page }}{% endcapture %}
+  {%- elsif pub.doi %}{% capture link %}https://doi.org/{{ pub.doi }}{% endcapture %}
+  {%- else %}{% assign link = pub.url %}{% endif %}
+  <li>
+    <b>{% if link %}<a href="{{ link }}">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}</b><br>
+    {{ pub.authors }}.<br>
+    <i>{{ pub.journal | escape }}</i>.{% if pub.event %} <b>{{ pub.event | escape }}</b>.{% endif %}{% if pub.status %} {{ pub.status | escape }}.{% endif %}{% if pub.doi %} <a href="https://doi.org/{{ pub.doi }}">doi:{{ pub.doi }}</a>{% endif %}
+  </li>
+{%- endfor %}
+</ol>
+{% assign number = number | minus: year.size %}
+{% endfor %}

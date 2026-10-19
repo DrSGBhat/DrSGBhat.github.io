@@ -1,0 +1,216 @@
+# Publications shown on /publications/, grouped by year and numbered from
+# newest to oldest. Keep the list newest first: the page numbers papers in
+# the order they appear here.
+#
+# Fields:
+#   title    paper title
+#   authors  author list; wrap your own name in <i><b>...</b></i>
+#   journal  journal, conference or degree line (shown in italics)
+#   event    optional conference short name, shown in bold (e.g. IMECE 2018)
+#   status   optional, e.g. "Publish Ahead of Print, March 1, 2027"
+#   year     year heading the paper is listed under
+#   doi      optional DOI (without https://doi.org/)
+#   page     optional abstract page on this site (a file in _publications)
+#   url      optional link used when there is no page and no DOI
+#
+# The title links to `page` if there is one, otherwise to the DOI, otherwise
+# to `url`.
+
+- title: "Impact of Anterior Load Carriage on Dynamic Sagittal Spinal Alignment: A Comparative Study Between Individuals Below and Above 65 Years"
+  authors: 'Apurba Barman, Asghar Rezaei, <i><b>Sandesh G. Bhat</b></i>, Kenton R. Kaufman'
+  journal: "American Journal of Physical Medicine & Rehabilitation"
+  status: "Publish Ahead of Print, August 13, 2026"
+  year: 2026
+  doi: "10.1097/PHM.0000000000003128"
+
+- title: "Empowering Movement: A Human-in-the-Loop Proportional Controller for Assisted Elbow Flexion in Brachial Plexus Injury"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Alexander Shin, Kenton Kaufman'
+  journal: "Military Medicine"
+  year: 2026
+  doi: "10.1093/milmed/usag058"
+
+- title: "Estimation of Endurance During Elbow Flexion with Myoelectric Orthotic Assistance"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Devin Nuckles, Alexander Shin, Kenton Kaufman'
+  journal: "Archives of Physical Medicine and Rehabilitation"
+  year: 2026
+  doi: "10.1016/j.apmr.2026.04.006"
+
+- title: "Impact of frailty on gait outcomes in idiopathic normal pressure hydrocephalus after shunting"
+  authors: 'Rahul Kumar, Zach Pennington, Abdelrahman M. Hamouda, Katherine J. Zhu, Maria D. Astudillo Potes, Mahnoor Shafi, Cameron Aubert, Nicholas Kendall, <i><b>Sandesh G. Bhat</b></i>, Ignacio Jusué-Torres, Jonathan Graff-Radford, Vijay K. Ramanan, David T. Jones, Hugo Botha, Jeremy K. Cutsforth-Gregory, Petrice M. Cogswell, Kenton R. Kaufman, Benjamin D. Elder'
+  journal: "Clinical Neurology and Neurosurgery"
+  year: 2026
+  url: "https://www.sciencedirect.com/science/article/abs/pii/S0303846726000363"
+
+- title: "Dynamic Stability Analysis of Progressive Supranuclear Palsy affected gait using Lyapunov Floquet Theory"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Farwa Ali, Cecilia Hogen, Asghar Rezaei, Keith Josephs, Jennifer Whitwell, Kenton Kaufman'
+  journal: "IEEE Transactions on Neural Systems and Rehabilitation Engineering"
+  year: 2025
+  doi: "10.1109/TNSRE.2025.3614555"
+  page: /publications/TNSRE_PSP25
+
+- title: "Patient-Reported Outcome Measures used in Clinical Trials of an Elbow Orthosis: A Scoping Review"
+  authors: 'Hadley Ninow, Apurba Barman, <i><b>Sandesh G Bhat</b></i>, Gwen Wilson, Kenton Kaufman'
+  journal: "Prosthetics and Orthotics International"
+  year: 2025
+  doi: "10.1097/PXR.0000000000000482"
+  page: /publications/POI25
+
+- title: "Real-World Evidence-Based Outcomes to Measure Upper Extremity Activity in The Brachial Plexus Injury Population"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Alexander Shin, Kenton Kaufman'
+  journal: "European Journal of Orthopaedic Surgery and Traumatology"
+  year: 2025
+  doi: "10.1007/s00590-025-04411-4"
+  page: /publications/EJOST25
+
+- title: "Spinal Accessory Nerve vs Intercostal Nerves in Gracilis Free Functioning Muscle Transfer for Elbow Flexion in Adult Brachial Plexus Patients"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Allen Bishop, Robert Spinner, Kenton Kaufman, Alexander Shin'
+  journal: "Journal of Hand Surgery"
+  year: 2025
+  doi: "10.1016/j.jhsa.2025.04.005"
+  page: /publications/JHS25
+
+- title: "Evaluating Longitudinal Changes of Gait Parameters Following Shunt Placement in Patients with Idiopathic Normal Pressure Hydrocephalus"
+  authors: 'Rahul Kumar, Abdelrahman M. Hamouda, Zach Pennington, Maria D. Astudillo Potes, Mahnoor Shafi, Hana Hallak, <i><b>Sandesh G. Bhat</b></i>, Asghar Rezaei, Ignacio Jusué-Torres, Jonathan Graff-Radford, David T. Jones, Hugo Botha, Jeremy K. Cutsforth-Gregory, Farwa Ali, Petrice M. Cogswell, Kenton R. Kaufman, Benjamin D. Elder'
+  journal: "Journal of Neurosurgery"
+  year: 2025
+  doi: "10.3171/2025.3.JNS241416"
+  page: /publications/JNS25
+
+- title: "Enhanced Functionality Using a Powered Upper Extremity Exoskeleton in Patients with Brachial Plexus Injuries"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Emily Miller, Paul Kane, Kevin Hollander, Claudio Vignola, Alexander Shin, Thomas Sugar, Kenton Kaufman'
+  journal: "IEEE Transactions on Neural Systems and Rehabilitation Engineering"
+  year: 2025
+  doi: "10.1109/TNSRE.2025.3538175"
+  page: /publications/TNSRE25
+
+- title: "Myoelectric performance of the reconstructed elbow flexor in patients with brachial plexus injuries"
+  authors: 'Emily Miller, <i><b>Sandesh G Bhat</b></i>, Paul Kane, Alexander Shin, Kenton Kaufman'
+  journal: "Journal of Electromyography and Kinesiology"
+  year: 2024
+  doi: "10.1016/j.jelekin.2024.102944"
+  page: /publications/JEK24
+
+- title: "Dynamical systems theory applied to short walking trials"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Kenton Kaufman'
+  journal: "Journal of Biomechanics"
+  year: 2024
+  doi: "10.1016/j.jbiomech.2024.112331"
+  page: /publications/JOB24
+
+- title: "Age-related changes in gait, balance, and strength parameters: A cross-sectional study"
+  authors: 'Asghar Rezaei, <i><b>Sandesh G Bhat</b></i>, Chih-Hsiu Cheng, Robert Pignolo, Lichun Lu, Kenton Kaufman'
+  journal: "PLOS ONE"
+  year: 2024
+  doi: "10.1371/journal.pone.0310764"
+  page: /publications/PlosOne24
+
+- title: "Design and Development of a Powered Myoelectric Elbow Orthosis for Neuromuscular Injuries"
+  authors: 'Claudio Vignola, <i><b>Sandesh G Bhat</b></i>, Kevin Hollander, Paul Kane, Emily Miller, W. Brandon Martin, Alexander Shin, Thomas Sugar, Kenton Kaufman'
+  journal: "Military Medicine"
+  year: 2024
+  doi: "10.1093/milmed/usae196"
+  page: /publications/MM24
+
+- title: "Upper extremity asymmetry due to nerve injuries or central neurologic conditions: a scoping review"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Alexander Shin, Kenton Kaufman'
+  journal: "Journal of Neuroengineering and Rehabilitation"
+  year: 2023
+  doi: "10.1186/s12984-023-01277-7"
+
+- title: "Characterization of elbow flexion torque after nerve reconstruction of patients with traumatic brachial plexus injury"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Eric Noonan, Griffin Mess, Emily Miller, Alexander Shin, Kenton Kaufman'
+  journal: "Clinical Biomechanics"
+  year: 2023
+  doi: "10.1016/j.clinbiomech.2023.105951"
+  page: /publications/ClinBio23
+
+- title: "Muscle activation for targeted elbow force production following surgical reconstruction in adults with brachial plexus injury"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Emily Miller, Alexander Shin, Kenton Kaufman'
+  journal: "Journal of Orthopaedic Research"
+  year: 2023
+  doi: "10.1002/jor.25534"
+  page: /publications/JOR23
+
+- title: "Applications of symbolically computed Lyapunov-Floquet transformation"
+  authors: 'Susheelkumar Subramanian, <i><b>Sandesh G Bhat</b></i>, Sangram Redkar'
+  journal: "International Journal of Nonlinear Dynamics and Control"
+  year: 2022
+  doi: "10.1504/IJNDC.2022.124209"
+  page: /publications/IJNDC22
+
+- title: "Order reduction of nonlinear quasi-periodic systems subjected to external excitations"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Susheelkumar Subramanian, Sangram Redkar'
+  journal: "International Journal of Non-Linear Mechanics"
+  year: 2022
+  doi: "10.1016/j.ijnonlinmec.2022.103994"
+  page: /publications/IJNLMorder
+
+- title: "Application of Floquet Theory to Human Gait Kinematics and Dynamics"
+  authors: '<b><i>Sandesh G. Bhat</i></b>, Susheelkumar Subramanian, Thomas Sugar, Sangram Redkar'
+  journal: "Journal of Mechanisms and Robotics"
+  year: 2021
+  doi: "10.1115/1.4050199"
+  page: /publications/JMRanalysis
+
+- title: "Dynamical Systems Theory and its Application to Human Gait Analysis"
+  authors: '<i><b>Sandesh G Bhat</b></i>'
+  journal: "PhD Dissertation, Arizona State University"
+  year: 2021
+  page: /publications/PhDdiss
+
+- title: "Reconstruction Of Ground Reaction Force Data Using Lyapunov Floquet Theory And Invariant Manifold Theory"
+  authors: '<b><i>Sandesh G. Bhat</i></b>, Thomas Sugar, Sangram Redkar'
+  journal: "ASME 2020 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference"
+  event: "IDETC-CIE 2020"
+  year: 2020
+  page: /publications/IDETCgrfrecon
+
+- title: "Invariant Manifolds In Human Joint Angle Analysis During Walking Gait"
+  authors: '<b><i>Sandesh G. Bhat</i></b>, Thomas Sugar, Sangram Redkar'
+  journal: "ASME 2020 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference"
+  event: "IDETC-CIE 2020"
+  year: 2020
+  page: /publications/IDETCinvariant
+
+- title: "Design and Analysis of an Auto-Parametrically Excited Platform for Active Vibration Control"
+  authors: 'Thao Le, <i><b>Sandesh G Bhat</b></i>, Susheelkumar Subramanian, Peter Waswa, Sangram Redkar'
+  journal: "ASME 2019 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference"
+  event: "IDETC-CIE 2019"
+  year: 2019
+  page: /publications/IDETCthao
+
+- title: "Analysis of a periodic force applied to the trunk to assist walking gait"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Susheelkumar Cherangara, Jason Olson, Sangram Redkar, Thomas Sugar'
+  journal: "2019 Wearable Robotics Association Conference"
+  event: "WearRAcon 2019"
+  year: 2019
+  page: /publications/WearRA
+
+- title: "Volitional control of an active prosthetic ankle: a survey"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Sangram Redkar'
+  journal: "International Robotics & Automation Journal"
+  year: 2018
+  doi: "10.15406/iratj.2018.04.00153"
+  page: /publications/IRAJsurvey
+
+- title: "Design and Development of an Unmanned Underwater Vehicle (UUV) in the Form of a Cuttlefish"
+  authors: 'Susheelkumar Cherangara Subramanian, Thao Le, Jason Olson, <i><b>Sandesh G Bhat</b></i>, Sangram Redkar'
+  journal: "ASME 2018 International Mechanical Engineering Congress and Exposition"
+  event: "IMECE 2018"
+  year: 2018
+  doi: "10.1115/IMECE2018-86530"
+  page: /publications/IMECEuuv
+
+- title: "Development of a Passive Prosthetic Ankle With Slope Adapting Capabilities"
+  authors: '<i><b>Sandesh G Bhat</b></i>, Sangram Redkar, Thomas Sugar'
+  journal: "ASME 2018 International Mechanical Engineering Congress and Exposition"
+  event: "IMECE 2018"
+  year: 2018
+  doi: "10.1115/IMECE2018-86593"
+  page: /publications/IMECEankle
+
+- title: "Design and Development of a Passive Prosthetic Ankle"
+  authors: '<i><b>Sandesh G Bhat</b></i>'
+  journal: "Master of Science Theses, Arizona State University"
+  year: 2017
+  page: /publications/MStheses
