@@ -163,6 +163,27 @@ jobs:
           sleep 2
           cat > styles.mjs <<'JS'
           import { chromium } from 'playwright';
+          import fs from 'node:fs';
+          // The production build links assets with absolute https://DrSGBhat.github.io URLs.
+          // Serve those from the local build instead, so the live site is never used.
+          const dirs = { 8001: '_site', 8002: '_site_old' };
+          async function local(page, port) {
+            await page.route(u => u.hostname.toLowerCase() === 'drsgbhat.github.io', route => {
+              let p = decodeURIComponent(new URL(route.request().url()).pathname);
+              let f = dirs[port] + p;
+              if (f.endsWith('/')) f += 'index.html';
+              if (!fs.existsSync(f) && fs.existsSync(f + '/index.html')) f += '/index.html';
+              if (!fs.existsSync(f)) return route.fulfill({ status: 404, body: 'missing ' + p });
+              return route.fulfill({ path: f });
+            });
+          }
+          async function open(browserOrCtx, port, path, opts) {
+            const page = await browserOrCtx.newPage(opts);
+            await local(page, port);
+            await page.goto(`http://localhost:${port}${path}`, { waitUntil: 'load' });
+            await page.waitForTimeout(500);
+            return page;
+          }
           const sel = {
             body: 'body', text: '.page__content p', link: '.page__content a',
             masthead: '.masthead', navlink: '.masthead__menu-item a', title: '.page__title',
@@ -177,9 +198,7 @@ jobs:
             for (const path of ['/', '/publications/']) {
               const out = {};
               for (const [name, port] of [['old', 8002], ['new', 8001]]) {
-                const page = await ctx.newPage();
-                await page.goto(`http://localhost:${port}${path}`, { waitUntil: 'load' });
-                await page.waitForTimeout(300);
+                const page = await open(ctx, port, path);
                 out[name] = await page.evaluate(([sel, props]) => {
                   const r = {};
                   for (const [k, s] of Object.entries(sel)) {
@@ -203,10 +222,8 @@ jobs:
           }
           // Icon diagnostics
           {
-            const pg = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-            for (const [name, port, icon] of [['new', 8001, '.author__urls .fa-envelope']]) {
-              await pg.goto(`http://localhost:${port}/`, { waitUntil: 'load' });
-              await pg.waitForTimeout(500);
+            for (const [name, port, icon] of [['new', 8001, '.author__urls .fa-envelope'], ['old', 8002, '.author__urls .fa-envelope'], ['new', 8001, '#theme-icon']]) {
+              const pg = await open(browser, port, '/', { viewport: { width: 1280, height: 900 } });
               const info = await pg.evaluate((icon) => {
                 const e = document.querySelector(icon); if (!e) return 'absent';
                 const b = e.getBoundingClientRect(); const cs = getComputedStyle(e); const bf = getComputedStyle(e, '::before');
@@ -214,12 +231,11 @@ jobs:
                 return `box=${Math.round(b.width)}x${Math.round(b.height)} font=${cs.fontFamily}/${cs.fontWeight} display=${cs.display} before.content=${bf.content} --fa=${cs.getPropertyValue('--fa')} li=${lb ? Math.round(lb.width)+'x'+Math.round(lb.height)+' '+getComputedStyle(li).display+' '+li.className+' parent='+li.parentElement.className : ''} fonts=${[...document.fonts].map(f => f.family + ':' + f.status).join(',')}`;
               }, icon);
               console.log(`::notice title=icon ${name} ${icon}::${info}`);
+              await pg.close();
             }
-            await pg.close();
           }
           {
-            const pg = await browser.newPage();
-            await pg.goto('http://localhost:8001/', { waitUntil: 'load' });
+            const pg = await open(browser, 8001, '/');
             const sheets = await pg.evaluate(() => [...document.styleSheets].map(sh => {
               let n = 'x', faces = [];
               try { n = sh.cssRules.length; faces = [...sh.cssRules].filter(r => r.constructor.name === 'CSSFontFaceRule').map(r => r.style.getPropertyValue('font-family')); } catch (e) { n = 'err ' + e.message; }
@@ -230,8 +246,7 @@ jobs:
           }
           // Theme toggle switches to light and back
           try {
-          const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-          await page.goto('http://localhost:8001/');
+          const page = await open(browser, 8001, '/', { viewport: { width: 1280, height: 900 } });
           await page.click('#theme-toggle a', { timeout: 10000 });
           const light = await page.evaluate(() => [document.documentElement.getAttribute('data-theme'), getComputedStyle(document.body).backgroundColor]);
           await page.click('#theme-toggle a', { timeout: 10000 });
@@ -239,8 +254,10 @@ jobs:
           console.log(`::notice title=toggle::after one click ${JSON.stringify(light)}; after two ${JSON.stringify(dark)}`);
           const errs = [];
           const p2 = await browser.newPage();
+          await local(p2, 8001);
           p2.on('pageerror', e => errs.push(e.message));
           p2.on('console', m => { if (m.type() === 'error') errs.push(m.text()); });
+          p2.on('requestfailed', r => errs.push('request failed ' + r.url()));
           await p2.goto('http://localhost:8001/publications/', { waitUntil: 'load' });
           await p2.waitForTimeout(500);
           console.log(`::notice title=js errors::${errs.length ? errs.join(' ; ') : 'none'}`);
@@ -250,7 +267,4 @@ jobs:
           }
           await browser.close();
           JS
-          echo "::notice title=fa css head::$(head -c 600 _site/assets/css/fontawesome.css | od -An -c | tr -s ' ' | tr '\n' ' ' | cut -c1-2500)"
-          echo "::notice title=fa-sun bytes::$(grep -oE '\.fa-sun\{[^}]*\}' _site/assets/css/fontawesome.css | head -1 | od -An -tx1 | tr '\n' ' ')"
-          echo "::notice title=head links::$(grep -oE '<link[^>]*stylesheet[^>]*>' _site/index.html | tr '\n' ' ')"
           node styles.mjs
