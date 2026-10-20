@@ -1,24 +1,19 @@
 /* ==========================================================================
     SANDESH THEME - DARK VERSION (site default)
-    The site's original colour scheme, carried over from the old
-    _sass/_variables.scss and _sass/skins/_default.scss. It is the default:
-    _layouts/default.html sets data-theme="dark" and assets/js/theme.js only
-    switches to light when a visitor picks it with the toggle.
+    "Graphite & indigo": near-black graphite with a soft indigo accent.
+    This is the mode the site opens in: _layouts/default.html sets
+    data-theme="dark" (site_theme_mode in _config.yml), and the theme toggle
+    switches a visitor to light.
+    Every text colour meets WCAG AA contrast (4.5:1) on its background.
     ========================================================================== */
 
 /* Color codes used for the theme */
-$primary-color              : #8cd2d5;
-$gray                       : #7a8288;
+$primary-color              : #4f46e5;  // indigo, behind the active menu item (white text)
+$gray                       : #71717a;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 $lighter-gray               : mix(#fff, $gray, 90%);
-
-$background                 : #252a34;
-$text                       : #eaeaea;
-$border                     : mix(#fff, $background, 20%);
-/* Old skin: links are the skin accent (#00adb5) mixed into the text colour */
-$link                       : mix(#00adb5, $text, 40%);
 
 /* Color codes used for the site */
 $danger-color               : #ee5f5b;
@@ -39,22 +34,24 @@ $sidebar-screen-min-width   : 1024px;
 
 html[data-theme="dark"] {
     --global-base-color                 : #{$primary-color};
-    --global-bg-color                   : #{$background};
-    --global-footer-bg-color            : #{mix(#000, $background, 30%)};
-    --global-border-color               : #{$border};
-    --global-dark-border-color          : #{$border};
-    --global-code-background-color      : #{mix(#000, $background, 15%)};
-    --global-code-text-color            : #{$text};
-    --global-fig-caption-color          : #{$light-gray};
-    --global-link-color                 : #{$link};
-    --global-link-color-hover           : #{mix(#fff, $link, 25%)};
-    --global-link-color-visited         : #{mix(#000, $link, 25%)};
-    --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{mix(#000, $text, 20%)};
-    --global-text-color                 : #{$text};
-    --global-text-color-light           : #{$light-gray};
-    --global-thead-color                : #{$border};
-    --global-dropdown-bg-color          : #5B6780;
-    --global-footer-text-color          : #{mix(#fff, $gray, 25%)};
-    --global-footer-border-color        : #{mix(#000, $background, 30%)}; /* no visible line, as before */
+    --global-bg-color                   : #131316;
+    --global-footer-bg-color            : #0c0c0e;
+    --global-footer-text-color          : #8b8b94;
+    --global-footer-border-color        : #1f1f23;
+    --global-border-color               : #27272a;
+    --global-dark-border-color          : #34343a;
+    --global-code-background-color      : #1c1c20;
+    --global-code-text-color            : #e4e4e7;
+    --global-fig-caption-color          : #a1a1aa;
+    --global-link-color                 : #a5b4fc;
+    --global-link-color-hover           : #c7d2fe;
+    --global-link-color-visited         : #b8a9f7;
+    --global-masthead-link-color        : #e4e4e7;
+    --global-masthead-link-color-hover  : #a5b4fc;
+    --global-text-color                 : #e4e4e7;
+    --global-text-color-light           : #a1a1aa;
+    --global-thead-color                : #27272a;
+    --global-dropdown-bg-color          : #1c1c20;
+    --global-selection-bg-color         : #4f46e5;
+    --global-selection-text-color       : #ffffff;
 }

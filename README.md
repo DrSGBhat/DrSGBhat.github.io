@@ -32,6 +32,8 @@ This README explains how to keep the site up to date.
 | Profile photo | `images/sandesh.jpg` |
 | PDFs (CV, open-access papers) | `files/` |
 | Browser tab icon (favicon) | `favicon.ico` and the `images/favicon-*`, `apple-touch-icon.png`, `android-chrome-*` files |
+| Colours (light and dark mode) | `_sass/theme/_sandesh_light.scss` and `_sass/theme/_sandesh_dark.scss` |
+| Which mode the site opens in | `site_theme_mode` in `_config.yml` (`dark`, `light`, or blank to follow the visitor's setting) |
 
 Several pages show a hand-written `updated: M/D/YYYY` line near the top. Change it whenever you edit that page.
 
