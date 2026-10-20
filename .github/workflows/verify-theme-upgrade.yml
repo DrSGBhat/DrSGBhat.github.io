@@ -36,12 +36,17 @@ jobs:
       - name: Show Jekyll and Sass versions
         run: |
           bundle exec jekyll --version
-          bundle exec gem list | grep -E "^(jekyll|jekyll-sass-converter|sass|sassc|liquid|kramdown|github-pages) "
+          echo "::notice title=versions::$(bundle exec gem list | grep -E '^(jekyll|jekyll-sass-converter|sass|sassc|liquid|kramdown|github-pages) ' | tr '\n' ';')"
 
       - name: Jekyll build (production)
         env:
           JEKYLL_ENV: production
-        run: bundle exec jekyll build --safe --trace 2>&1 | tee build.log; test ${PIPESTATUS[0]} -eq 0
+        run: |
+          bundle exec jekyll build --safe --trace > build.log 2>&1 && exit 0
+          # Surface the error as annotations (logs are not readable from outside)
+          grep -nE "Error|error|Exception|Invalid|Liquid|line [0-9]" build.log | head -25 | while read -r l; do echo "::error title=jekyll build::${l:0:900}"; done
+          tail -n 8 build.log | while read -r l; do echo "::error title=build tail::${l:0:900}"; done
+          exit 1
 
       - name: No build warnings or Liquid errors
         run: |
