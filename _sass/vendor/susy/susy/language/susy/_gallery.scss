@@ -1,6 +1,5 @@
 // Gallery Syntax
 // ==============
-@use 'sass:math';
 
 // Gallery
 // -------
@@ -22,7 +21,7 @@
 
   $inside       : is-inside($span);
   $from         : from($flow);
-  $line         : floor(math.div($context, $n));
+  $line         : floor($context / $n);
   $symmetrical  : is-symmetrical($columns);
 
   $output: (
