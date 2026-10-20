@@ -201,6 +201,22 @@ jobs:
             }
             await ctx.close();
           }
+          // Icon diagnostics
+          {
+            const pg = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+            for (const [name, port, icon] of [['new', 8001, '.author__urls .fa-envelope'], ['old', 8002, '.author__urls .fa-envelope'], ['new', 8001, '#theme-icon'], ['new', 8001, '.author__urls .fa-github']]) {
+              await pg.goto(`http://localhost:${port}/`, { waitUntil: 'load' });
+              await pg.waitForTimeout(500);
+              const info = await pg.evaluate((icon) => {
+                const e = document.querySelector(icon); if (!e) return 'absent';
+                const b = e.getBoundingClientRect(); const cs = getComputedStyle(e); const bf = getComputedStyle(e, '::before');
+                const li = e.closest('li'); const lb = li ? li.getBoundingClientRect() : null;
+                return `box=${Math.round(b.width)}x${Math.round(b.height)} font=${cs.fontFamily}/${cs.fontWeight} display=${cs.display} before.content=${bf.content} --fa=${cs.getPropertyValue('--fa')} li=${lb ? Math.round(lb.width)+'x'+Math.round(lb.height)+' '+getComputedStyle(li).display+' '+li.className+' parent='+li.parentElement.className : ''} fonts=${[...document.fonts].map(f => f.family + ':' + f.status).join(',')}`;
+              }, icon);
+              console.log(`::notice title=icon ${name} ${icon}::${info}`);
+            }
+            await pg.close();
+          }
           // Theme toggle switches to light and back
           try {
           const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
@@ -223,4 +239,6 @@ jobs:
           }
           await browser.close();
           JS
+          for c in fa-sun fa-envelope fa-github; do echo "::notice title=css .$c::$(grep -oE "\.$c\{[^}]*\}" _site/assets/css/fontawesome.css | head -2 | tr '\n' ' ')"; done
+          echo "::notice title=css core::$(grep -oE "\.fa-solid::before[^}]*\}" _site/assets/css/fontawesome.css | head -1) $(grep -oE "@font-face\{[^}]*solid[^}]*\}" _site/assets/css/fontawesome.css | head -1 | cut -c1-400)"
           node styles.mjs
