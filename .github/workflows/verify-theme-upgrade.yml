@@ -170,6 +170,7 @@ jobs:
             footer: '.page__footer', pubItem: '.publication-list li', h2: '.page__content h2',
           };
           const props = ['background-color', 'color', 'font-family', 'font-size', 'width', 'margin-bottom', 'line-height'];
+          process.on('unhandledRejection', e => { console.log(`::error title=style script::${String(e && e.stack || e).replace(/\n/g, ' %0A ')}`); process.exit(1); });
           const browser = await chromium.launch();
           for (const vw of [1280, 400]) {
             const ctx = await browser.newContext({ viewport: { width: vw, height: 900 } });
@@ -193,10 +194,10 @@ jobs:
                 }, [sel, props]);
                 await page.close();
               }
-              for (const k of Object.keys(out.new)) {
-                const same = out.old[k] === out.new[k];
-                console.log(`::notice title=${vw}px ${path} ${k} ${same ? 'SAME' : 'DIFF'}::old: ${out.old[k]} | new: ${out.new[k]}`);
-              }
+              const keys = Object.keys(out.new);
+              const diffs = keys.filter(k => out.old[k] !== out.new[k]);
+              const detail = diffs.map(k => `${k}: old[${out.old[k]}] new[${out.new[k]}]`).join(' %0A ');
+              console.log(`::notice title=${vw}px ${path}: ${keys.length - diffs.length} same, ${diffs.length} differ::${detail || 'all identical'}`);
             }
             await ctx.close();
           }
