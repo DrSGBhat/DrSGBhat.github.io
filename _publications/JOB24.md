@@ -7,7 +7,7 @@ venue: 'Journal of Biomechanics'
 citation: '<i><b>Sandesh G Bhat</b></i>, Kenton Kaufman.'
 ---
 
-[[Publication]](http://DrSGBhat.github.io/files/JOB24.pdf)
+[[Publication]](https://doi.org/10.1016/j.jbiomech.2024.112331)
 
 ## Abstract
 

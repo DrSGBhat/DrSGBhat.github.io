@@ -7,7 +7,7 @@ venue: 'Journal of Electromyography and Kinesiology'
 citation: 'Emily Miller, <i><b>Sandesh G Bhat</b></i>, Paul Kane, Alexander Shin, Kenton Kaufman.'
 ---
 
-[[Publication]](http://DrSGBhat.github.io/files/JEK24.pdf)
+[[Publication]](https://doi.org/10.1016/j.jelekin.2024.102944)
 
 ## Abstract
 
