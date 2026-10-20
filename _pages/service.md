@@ -9,7 +9,7 @@ updated: 8/7/2026
 # Academic
 
 * <b>Member, Graduate Faculty</b> (2025-Present)
-	* <i>University of Wisconsin-Eau Claire, Eau Claire, WI</i>
+	* <i>University of Wisconsin - Eau Claire, Eau Claire, WI</i>
 
 * <b>Peer Reviewer</b>
 	* <i>Journals</i>

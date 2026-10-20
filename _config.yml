@@ -15,7 +15,7 @@ locale                   : "en-US"
 title                    : "Sandesh G. Bhat"
 title_separator          : "-"
 name                     : &name "Sandesh G. Bhat"
-description              : &description "Sandesh G. Bhat, Assistant Professor at the University of Wisconsin–Eau Claire, develops assistive and rehabilitation robotics for the upper extremity, with research in orthoses, exoskeletons, neuromuscular control, and biomechanics."
+description              : &description "Sandesh G. Bhat, Assistant Professor at the University of Wisconsin - Eau Claire, develops assistive and rehabilitation robotics for the upper extremity, with research in orthoses, exoskeletons, neuromuscular control, and biomechanics."
 url                      : https://DrSGBhat.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "DrSGBhat/DrSGBhat.github.io"
@@ -88,10 +88,9 @@ analytics:
 author:
   name             : "Sandesh G. Bhat"
   avatar           : "sandesh.jpg"
-  bio              : "Assistant Professor ,<br>
-                      Assistive Systems & Robotics Engineering,<br>
+  bio              : "Assistant Professor,<br>
                       Physics & Astronomy Department,<br>
-                      University of Wisconsin"
+                      University of Wisconsin - Eau Claire"
   location         : "Eau Claire, WI, USA"
   employer         : 
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=Dx9aVjgAAAAJ"

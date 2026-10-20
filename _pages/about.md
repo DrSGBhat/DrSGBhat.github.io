@@ -1,14 +1,14 @@
 ---
 permalink: /
 title: "About me"
-excerpt: "Sandesh G. Bhat is an Assistant Professor at the University of Wisconsin–Eau Claire who develops assistive and rehabilitation robotics for the upper extremity."
+excerpt: "Sandesh G. Bhat is an Assistant Professor at the University of Wisconsin - Eau Claire who develops assistive and rehabilitation robotics for the upper extremity."
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Welcome! I’m Sandesh Bhat, an Assistant Professor of Assistive Robotics at the University of Wisconsin–Eau Claire. I lead the [Robotics for Assistive Systems and Rehabilitation (RASR) Lab](https://rasr-lab.github.io/), where undergraduate researchers develop upper extremity robotics that assist with activities of daily living and with rehabilitation after surgery or injury.
+Welcome! I’m Sandesh Bhat, an Assistant Professor at the University of Wisconsin - Eau Claire. I lead the [Robotics for Assistive Systems and Rehabilitation (RASR) Lab](https://rasr-lab.github.io/), where undergraduate researchers develop upper extremity robotics that assist with activities of daily living and with rehabilitation after surgery or injury.
 
 In the past, I was a Senior Research Fellow at the [Motion Analysis Laboratory](https://www.mayo.edu/research/labs/motion-analysis/overview), Mayo Clinic, and an Assistant Professor of Biomedical Engineering within the [Mayo Clinic College of Medicine and Science](https://college.mayo.edu/), Mayo Clinic. My research there focused on developing orthotic devices to advance upper extremity rehabilitation. 
 

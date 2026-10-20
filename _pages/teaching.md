@@ -1,6 +1,6 @@
 ---
 title: "Teaching"
-description: "Courses taught by Sandesh G. Bhat at the University of Wisconsin–Eau Claire, Mayo Clinic, and Arizona State University."
+description: "Courses taught by Sandesh G. Bhat at the University of Wisconsin - Eau Claire, Mayo Clinic, and Arizona State University."
 permalink: /teaching/
 author_profile: true
 ---
@@ -11,12 +11,12 @@ updated: 8/7/2026
 7. Introduction to Robotics (ASRE 150) <i>Spring 2026</i><br>
 	<b>Lecturer</b> (in-person)<br>
 	Physics and Astronomy Department, College of Arts and Sciences <br>
-	University of Wisconsin-Eau Claire, Eau Claire, WI.
+	University of Wisconsin - Eau Claire, Eau Claire, WI.
 
 6. General Physics (PHYS 211) <i>2025 - 26</i><br>
 	<b>Lecturer</b> (in-person)<br>
 	Physics and Astronomy Department, College of Arts and Sciences <br>
-	University of Wisconsin-Eau Claire, Eau Claire, WI.
+	University of Wisconsin - Eau Claire, Eau Claire, WI.
 
 5. Biomedical Applications of Engineering Principles <i>Dec 2023</i><br>
 	<b>Guest Lecturer</b> <br>

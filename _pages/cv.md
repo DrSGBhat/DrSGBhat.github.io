@@ -1,7 +1,7 @@
 ---
 <!-- layout: archive -->
 title: "Sandesh Bhat"
-description: "Curriculum vitae of Sandesh G. Bhat: education, academic appointments at UW–Eau Claire and Mayo Clinic, honors, and skills."
+description: "Curriculum vitae of Sandesh G. Bhat: education, academic appointments at the University of Wisconsin - Eau Claire and Mayo Clinic, honors, and skills."
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -21,8 +21,8 @@ Education
 
 Work experience
 ======
-* Assistant Professor of Assistive Robotics (Aug  2025 - Present)
-  * Physics and Astronomy Department, University of Wisconsin-Eau Claire, Eau Claire, WI.
+* Assistant Professor (Aug 2025 - Present)
+  * Physics and Astronomy Department, University of Wisconsin - Eau Claire, Eau Claire, WI.
 
 * Assistant Professor of Biomedical Engineering (Dec 2024 - Aug 2025)
   * Mayo Clinic College of Medicine and Science, Rochester, MN.
