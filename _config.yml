@@ -19,7 +19,7 @@ description              : &description "Sandesh G. Bhat, Assistant Professor at
 url                      : https://DrSGBhat.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "DrSGBhat/DrSGBhat.github.io"
-teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "teaser.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 comments:
@@ -79,9 +79,9 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               : "google-gtag" # false, "google-gtag" (Google Analytics 4), "custom"
   google:
-    tracking_id          : 
+    tracking_id          : "G-G39J6CJ1T7"
 
 
 # Site Author
@@ -183,9 +183,6 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
 
 
 # Defaults
@@ -217,16 +214,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-      sitemap: false
 
 # Sass/SCSS
 sass:
