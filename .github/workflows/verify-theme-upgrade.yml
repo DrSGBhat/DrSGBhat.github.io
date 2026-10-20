@@ -63,7 +63,7 @@ jobs:
           set -o pipefail
           htmlproofer ./_site --disable-external --checks Links,Images,Scripts \
             --ignore-urls "/^https?:/" 2>&1 | tee proofer.log || {
-            grep -E "^\* |^  \* |^For " proofer.log | head -60 | while read -r l; do echo "::error title=html-proofer::$l"; done
+            grep -vE "^\s*$" proofer.log | grep -vE "^\* At " | sed -E 's/^\s+//' | sort | uniq -c | sort -rn | head -40 | while read -r l; do echo "::error title=html-proofer::${l:0:900}"; done
             exit 1
           }
 
