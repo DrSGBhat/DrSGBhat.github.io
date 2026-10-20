@@ -2,6 +2,7 @@
 title: "Volitional control of an active prosthetic ankle: a survey"
 collection: publications
 permalink: /publications/IRAJsurvey
+date: 2018-11-27
 venue: 'International Robotics &amp; Automation Journal'
 citation: '<i><b>Sandesh G Bhat</b></i>, Sangram Redkar.'
 ---

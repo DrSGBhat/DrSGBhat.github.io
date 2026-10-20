@@ -10,8 +10,8 @@ author_profile: true
 
 Eau Claire, WI, U.S.A.<br>
 
-Email: mrsandeshbhat+website [at] gmail [dot] com
+Email: [mrsandeshbhat+website@gmail.com](mailto:mrsandeshbhat+website@gmail.com)
 
-LinkedIn: [<font color="#52ADC8">DrSGBhat</font>](https://in.linkedin.com/in/mrsandeshbhat)
+LinkedIn: [DrSGBhat](https://www.linkedin.com/in/mrsandeshbhat)
 
 <!-- <embed src="https://www.linkedin.com/in/mrsandeshbhat" width="650" height="1800" type='application/pdf'> -->
