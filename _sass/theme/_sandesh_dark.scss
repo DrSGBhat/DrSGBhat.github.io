@@ -55,4 +55,6 @@ html[data-theme="dark"] {
     --global-text-color-light           : #{$light-gray};
     --global-thead-color                : #{$border};
     --global-dropdown-bg-color          : #5B6780;
+    --global-footer-text-color          : #{mix(#fff, $gray, 25%)};
+    --global-footer-border-color        : #{mix(#000, $background, 30%)}; /* no visible line, as before */
 }
