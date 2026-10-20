@@ -61,11 +61,21 @@ jobs:
       - name: html-proofer (internal links, images, scripts)
         run: |
           set -o pipefail
+          # --allow-missing-href: the theme's light/dark toggle is an <a role="button">
+          #   without href; the next step checks no other anchor lacks one.
+          # --no-enforce-https: the (unlisted) Photography page loads its widget
+          #   from a protocol-relative URL; that is content, not part of the theme.
           htmlproofer ./_site --disable-external --checks Links,Images,Scripts \
+            --allow-missing-href --no-enforce-https \
             --ignore-urls "/^https?:/" 2>&1 | tee proofer.log || {
             grep -vE "^\s*$" proofer.log | grep -vE "^\* At " | sed -E 's/^\s+//' | sort | uniq -c | sort -rn | head -40 | while read -r l; do echo "::error title=html-proofer::${l:0:900}"; done
             exit 1
           }
+
+      - name: Only the theme toggle is an anchor without href
+        run: |
+          bad=$(grep -rhoE "<a( [^>]*)?>" _site --include=*.html | grep -v "href=" | grep -v 'aria-labelledby="theme-icon"' | sort | uniq -c || true)
+          if [ -n "$bad" ]; then echo "$bad" | while read -r l; do echo "::error title=anchor without href::$l"; done; exit 1; fi
 
       - name: GA4 tag only in production
         run: |
