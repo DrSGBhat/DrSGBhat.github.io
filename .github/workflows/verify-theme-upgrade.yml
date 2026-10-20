@@ -18,6 +18,8 @@ jobs:
       PAGES_REPO_NWO: ${{ github.repository }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Write a Gemfile pinned to github-pages 232
         run: |
@@ -148,3 +150,71 @@ jobs:
             if grep -q "/$p/" _site/sitemap.xml; then echo "::error::$p is in sitemap.xml"; fail=1; fi
           done
           exit $fail
+
+      - name: Compare computed styles with the live main branch
+        run: |
+          set -e
+          git worktree add ../old origin/main
+          (cd ../old && JEKYLL_ENV=production bundle exec jekyll build --safe -d "$GITHUB_WORKSPACE/_site_old" > /dev/null)
+          npm install --no-save --silent playwright@1.49.1
+          npx playwright install --with-deps chromium > /dev/null
+          (cd _site && python3 -m http.server 8001 > /dev/null 2>&1 &)
+          (cd _site_old && python3 -m http.server 8002 > /dev/null 2>&1 &)
+          sleep 2
+          cat > styles.mjs <<'JS'
+          import { chromium } from 'playwright';
+          const sel = {
+            body: 'body', text: '.page__content p', link: '.page__content a',
+            masthead: '.masthead', navlink: '.masthead__menu-item a', title: '.page__title',
+            sidebar: '.sidebar', avatar: '.author__avatar img', authorName: '.author__name',
+            footer: '.page__footer', pubItem: '.publication-list li', h2: '.page__content h2',
+          };
+          const props = ['background-color', 'color', 'font-family', 'font-size', 'width', 'margin-bottom', 'line-height'];
+          const browser = await chromium.launch();
+          for (const vw of [1280, 400]) {
+            const ctx = await browser.newContext({ viewport: { width: vw, height: 900 } });
+            for (const path of ['/', '/publications/']) {
+              const out = {};
+              for (const [name, port] of [['old', 8002], ['new', 8001]]) {
+                const page = await ctx.newPage();
+                await page.goto(`http://localhost:${port}${path}`, { waitUntil: 'load' });
+                await page.waitForTimeout(300);
+                out[name] = await page.evaluate(([sel, props]) => {
+                  const r = {};
+                  for (const [k, s] of Object.entries(sel)) {
+                    const e = document.querySelector(s);
+                    if (!e) { r[k] = 'absent'; continue; }
+                    const cs = getComputedStyle(e);
+                    const box = e.getBoundingClientRect();
+                    r[k] = props.map(p => p + '=' + cs.getPropertyValue(p)).join(' ') + ` box=${Math.round(box.x)},${Math.round(box.y)},${Math.round(box.width)}x${Math.round(box.height)}`;
+                  }
+                  r.theme = document.documentElement.getAttribute('data-theme');
+                  return r;
+                }, [sel, props]);
+                await page.close();
+              }
+              for (const k of Object.keys(out.new)) {
+                const same = out.old[k] === out.new[k];
+                console.log(`::notice title=${vw}px ${path} ${k} ${same ? 'SAME' : 'DIFF'}::old: ${out.old[k]} | new: ${out.new[k]}`);
+              }
+            }
+            await ctx.close();
+          }
+          // Theme toggle switches to light and back
+          const page = await browser.newPage();
+          await page.goto('http://localhost:8001/');
+          await page.click('#theme-toggle a');
+          const light = await page.evaluate(() => [document.documentElement.getAttribute('data-theme'), getComputedStyle(document.body).backgroundColor]);
+          await page.click('#theme-toggle a');
+          const dark = await page.evaluate(() => [document.documentElement.getAttribute('data-theme'), getComputedStyle(document.body).backgroundColor]);
+          console.log(`::notice title=toggle::after one click ${JSON.stringify(light)}; after two ${JSON.stringify(dark)}`);
+          const errs = [];
+          const p2 = await browser.newPage();
+          p2.on('pageerror', e => errs.push(e.message));
+          p2.on('console', m => { if (m.type() === 'error') errs.push(m.text()); });
+          await p2.goto('http://localhost:8001/publications/', { waitUntil: 'load' });
+          await p2.waitForTimeout(500);
+          console.log(`::notice title=js errors::${errs.length ? errs.join(' ; ') : 'none'}`);
+          await browser.close();
+          JS
+          node styles.mjs
