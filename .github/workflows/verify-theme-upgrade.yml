@@ -202,11 +202,12 @@ jobs:
             await ctx.close();
           }
           // Theme toggle switches to light and back
-          const page = await browser.newPage();
+          try {
+          const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
           await page.goto('http://localhost:8001/');
-          await page.click('#theme-toggle a');
+          await page.click('#theme-toggle a', { timeout: 10000 });
           const light = await page.evaluate(() => [document.documentElement.getAttribute('data-theme'), getComputedStyle(document.body).backgroundColor]);
-          await page.click('#theme-toggle a');
+          await page.click('#theme-toggle a', { timeout: 10000 });
           const dark = await page.evaluate(() => [document.documentElement.getAttribute('data-theme'), getComputedStyle(document.body).backgroundColor]);
           console.log(`::notice title=toggle::after one click ${JSON.stringify(light)}; after two ${JSON.stringify(dark)}`);
           const errs = [];
@@ -216,6 +217,10 @@ jobs:
           await p2.goto('http://localhost:8001/publications/', { waitUntil: 'load' });
           await p2.waitForTimeout(500);
           console.log(`::notice title=js errors::${errs.length ? errs.join(' ; ') : 'none'}`);
+          } catch (e) {
+            console.log(`::error title=toggle or js check::${String(e && e.message || e).replace(/\n/g, ' %0A ').slice(0, 3000)}`);
+            process.exitCode = 1;
+          }
           await browser.close();
           JS
           node styles.mjs
