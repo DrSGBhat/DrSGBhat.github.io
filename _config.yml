@@ -12,6 +12,8 @@
 #minimal_mistakes_skin : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 locale                   : "en-US"
+site_theme               : "sandesh" # colour theme in _sass/theme/ (_sandesh_light.scss and _sandesh_dark.scss)
+site_theme_mode          : "dark"    # mode shown until a visitor uses the theme toggle: "dark" (the site's original colours), "light", or blank to follow the visitor's OS setting
 title                    : "Sandesh G. Bhat"
 title_separator          : "-"
 name                     : &name "Sandesh G. Bhat"
@@ -49,6 +51,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
+  hide                   : true      # no feed link in the footer (the feed itself is still built)
   path                   : # blank (default) uses feed.xml
 
 # SEO Related
@@ -132,6 +135,7 @@ exclude:
   - "*.sublime-workspace"
   - .asset-cache
   - .bundle
+  - .github
   - .jekyll-assets-cache
   - .sass-cache
   - assets/js/plugins
@@ -146,10 +150,12 @@ exclude:
   - LICENSE
   - log
   - node_modules
-  - package.json
+  - package.json*
+  - package-lock.json
   - Rakefile
   - README
   - tmp
+  - vendor
 #  - assets
 keep_files:
   - .git
