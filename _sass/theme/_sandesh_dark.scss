@@ -1,0 +1,60 @@
+/* ==========================================================================
+    SANDESH THEME - DARK VERSION (site default)
+    The site's original colour scheme, carried over from the old
+    _sass/_variables.scss and _sass/skins/_default.scss. It is the default:
+    _layouts/default.html sets data-theme="dark" and assets/js/theme.js only
+    switches to light when a visitor picks it with the toggle.
+    ========================================================================== */
+
+/* Color codes used for the theme */
+$primary-color              : #8cd2d5;
+$gray                       : #7a8288;
+$dark-gray                  : mix(#000, $gray, 40%);
+$darker-gray                : mix(#000, $gray, 60%);
+$light-gray                 : mix(#fff, $gray, 50%);
+$lighter-gray               : mix(#fff, $gray, 90%);
+
+$background                 : #252a34;
+$text                       : #eaeaea;
+$border                     : mix(#fff, $background, 20%);
+/* Old skin: links are the skin accent (#00adb5) mixed into the text colour */
+$link                       : mix(#00adb5, $text, 40%);
+
+/* Color codes used for the site */
+$danger-color               : #ee5f5b;
+$info-color                 : #52adc8;
+$notice-color               : #7a8288;
+$success-color              : #62c462;
+$warning-color              : #f89406;
+
+/* Other basic settings for the template */
+$border-radius              : 4px;
+$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$global-transition          : all 0.2s ease-in-out;
+$masthead-height            : 70px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+html[data-theme="dark"] {
+    --global-base-color                 : #{$primary-color};
+    --global-bg-color                   : #{$background};
+    --global-footer-bg-color            : #{mix(#000, $background, 30%)};
+    --global-border-color               : #{$border};
+    --global-dark-border-color          : #{$border};
+    --global-code-background-color      : #{mix(#000, $background, 15%)};
+    --global-code-text-color            : #{$text};
+    --global-fig-caption-color          : #{$light-gray};
+    --global-link-color                 : #{$link};
+    --global-link-color-hover           : #{mix(#fff, $link, 25%)};
+    --global-link-color-visited         : #{mix(#000, $link, 25%)};
+    --global-masthead-link-color        : #{$text};
+    --global-masthead-link-color-hover  : #{mix(#000, $text, 20%)};
+    --global-text-color                 : #{$text};
+    --global-text-color-light           : #{$light-gray};
+    --global-thead-color                : #{$border};
+    --global-dropdown-bg-color          : #5B6780;
+    --global-footer-text-color          : #{mix(#fff, $gray, 25%)};
+    --global-footer-border-color        : #{mix(#000, $background, 30%)}; /* no visible line, as before */
+}

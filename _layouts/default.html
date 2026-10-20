@@ -5,7 +5,11 @@ layout: compress
 {% include base_path %}
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+{% comment %}
+  site_theme_mode in _config.yml picks the colour mode shown before a visitor
+  uses the theme toggle. "dark" is the site's original colour scheme.
+{% endcomment %}
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme_mode == "dark" %} data-theme="dark"{% endif %}{% if site.site_theme_mode == "dark" or site.site_theme_mode == "light" %} data-default-theme="{{ site.site_theme_mode }}"{% endif %}>
   <head>
     {% include head.html %}
     {% include head/custom.html %}
@@ -17,8 +21,6 @@ layout: compress
     {% include masthead.html %}
 
     {{ content }}
-
-    </script>
 
     <div class="page__footer">
       <footer>
