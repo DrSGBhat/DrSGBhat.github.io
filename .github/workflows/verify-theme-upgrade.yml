@@ -64,13 +64,43 @@ jobs:
           # --allow-missing-href: the theme's light/dark toggle is an <a role="button">
           #   without href; the next step checks no other anchor lacks one.
           # --no-enforce-https: the (unlisted) Photography page loads its widget
-          #   from a protocol-relative URL; that is content, not part of the theme.
+          #   from a protocol-relative URL (external, so ignored); that is content.
           htmlproofer ./_site --disable-external --checks Links,Images,Scripts \
             --allow-missing-href --no-enforce-https \
-            --ignore-urls "/^https?:/" 2>&1 | tee proofer.log || {
+            --ignore-urls "/^https?:/,/^\/\//" 2>&1 | tee proofer.log || {
             grep -vE "^\s*$" proofer.log | grep -vE "^\* At " | sed -E 's/^\s+//' | sort | uniq -c | sort -rn | head -40 | while read -r l; do echo "::error title=html-proofer::${l:0:900}"; done
             exit 1
           }
+
+      - name: Every internal href/src resolves to a built file
+        run: |
+          python3 - <<'PY'
+          import os, re, sys, html
+          from urllib.parse import urlsplit, unquote
+          root = "_site"; bad = []; checked = set()
+          attr = re.compile(r'(?:href|src)\s*=\s*"([^"]*)"')
+          for d, _, fs in os.walk(root):
+              for f in fs:
+                  if not f.endswith(".html"): continue
+                  page = os.path.join(d, f)
+                  for url in attr.findall(open(page, encoding="utf-8").read()):
+                      url = html.unescape(url).strip()
+                      if not url or url.startswith(("#", "mailto:", "tel:", "javascript:", "data:")): continue
+                      u = urlsplit(url)
+                      if u.scheme or u.netloc:
+                          if u.netloc.lower() != "drsgbhat.github.io": continue
+                      path = unquote(u.path)
+                      if not path: continue
+                      base = root + path if path.startswith("/") else os.path.join(d, path)
+                      cands = [base, os.path.join(base, "index.html"), base + ".html"]
+                      checked.add(path)
+                      if not any(os.path.isfile(c) for c in cands):
+                          bad.append(f"{page}: {url}")
+          print(f"checked {len(checked)} distinct internal paths")
+          print(f"::notice title=internal links::checked {len(checked)} distinct internal paths")
+          for b in sorted(set(bad))[:50]: print(f"::error title=broken internal link::{b}")
+          sys.exit(1 if bad else 0)
+          PY
 
       - name: Only the theme toggle is an anchor without href
         run: |
