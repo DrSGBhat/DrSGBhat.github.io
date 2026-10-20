@@ -143,9 +143,9 @@
 .author__avatar {
   display: table-cell;
   vertical-align: top;
-  width: 36px;
+  width: 1000px; // site customization: large photo, as on the old theme
   // set width only, for non-square avatars
-  // height: 36px;
+  // height: 1000px;
 
   @include breakpoint($large) {
     display: block;
@@ -154,7 +154,7 @@
   }
 
   img {
-    max-width: 175px;
+    max-width: 1000px; // site customization (theme default 175px)
     border-radius: 50%;
 
     @include breakpoint($large) {
@@ -254,7 +254,7 @@
   list-style-type: none;
   border: 1px solid var(--global-border-color);
   border-radius: $border-radius;
-  background: var(--global-bg-color);
+  background: var(--global-dropdown-bg-color, var(--global-bg-color));
   z-index: -1;
   box-shadow: 0 0 10px rgba(#000, 0.25);
   cursor: default;
@@ -295,7 +295,7 @@
     width: 0;
     border-style: solid;
     border-width: 0 10px 10px;
-    border-color: #fff transparent;
+    border-color: var(--global-dropdown-bg-color, #fff) transparent;
     z-index: 1;
 
     @include breakpoint($large) {

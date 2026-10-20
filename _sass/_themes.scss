@@ -1,7 +1,6 @@
 /* ==========================================================================
    SHARED THEME SETTINGS
    ========================================================================== */
-@use 'sass:math';
 
 /* ==========================================================================
    TYPOGRAPHY
@@ -67,7 +66,7 @@ $right-sidebar-width-wide   : auto;
 $susy: (
     columns: 12,
     column-width: 120px,
-    gutters: math.div(1, 4),
+    gutters: 0.25, // 1/4; plain number so Ruby Sass (GitHub Pages) can compile it
     math: fluid,
     output: float,
     gutter-position: after,

@@ -197,7 +197,7 @@ body:hover .visually-hidden button {
 
 .social-icons {
   .fa {
-    color: #000;
+    color: inherit; // site customization: readable on the dark background
   }
 
   .fa-bluesky,

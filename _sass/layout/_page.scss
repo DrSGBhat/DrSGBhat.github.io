@@ -399,3 +399,12 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+/*
+   Publications list (grouped by year, numbered newest to oldest)
+   ========================================================================== */
+
+.publication-list li {
+  margin-bottom: 1.25em;
+  line-height: 1.5;
+}

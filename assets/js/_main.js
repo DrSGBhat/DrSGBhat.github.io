@@ -12,15 +12,24 @@ const MERMAID_URL = "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.mi
 // Detect OS/browser preference
 const browserPref = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+// Site default theme, set from _config.yml (site_theme_mode) on the <html> element as
+// data-default-theme. When it is "dark" or "light" it is used instead of the OS/browser
+// preference until the visitor picks a theme with the toggle.
+const siteDefaultTheme = document.documentElement.getAttribute("data-default-theme");
+const hasSiteDefault = (siteDefaultTheme === "dark" || siteDefaultTheme === "light");
+
 // Determine the computed theme, which can be "dark" or "light".
 function determineComputedTheme() {
   // Determine the expected state of the theme toggle, which can be "dark", "light", or default "system"
   let themeSetting = localStorage.getItem("theme");
   themeSetting = (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") ? "system" : themeSetting;
 
-  // Return the setting if set, or use the browser preference
+  // Return the setting if set, otherwise the site default, otherwise the browser preference
   if (themeSetting != "system") {
     return themeSetting;
+  }
+  if (hasSiteDefault) {
+    return siteDefaultTheme;
   }
   return browserPref ? "dark" : "light";
 }
@@ -145,7 +154,7 @@ $(document).ready(function () {
   setTheme();
   window.matchMedia('(prefers-color-scheme: dark)')
         .addEventListener("change", (e) => {
-          if (!localStorage.getItem("theme")) {
+          if (!localStorage.getItem("theme") && !hasSiteDefault) {
             setTheme(e.matches ? "dark" : "light");
           }
         });
