@@ -190,7 +190,7 @@ jobs:
             sidebar: '.sidebar', avatar: '.author__avatar img', authorName: '.author__name',
             footer: '.page__footer', pubItem: '.publication-list li', h2: '.page__content h2',
           };
-          const props = ['background-color', 'color', 'font-family', 'font-size', 'width', 'margin-bottom', 'line-height'];
+          const props = ['background-color', 'color', 'font-size', 'margin-bottom', 'line-height', 'border-radius'];
           process.on('unhandledRejection', e => { console.log(`::error title=style script::${String(e && e.stack || e).replace(/\n/g, ' %0A ')}`); process.exit(1); });
           const browser = await chromium.launch();
           for (const vw of [1280, 400]) {
@@ -215,8 +215,9 @@ jobs:
               }
               const keys = Object.keys(out.new);
               const diffs = keys.filter(k => out.old[k] !== out.new[k]);
-              const detail = diffs.map(k => `${k}: old[${out.old[k]}] new[${out.new[k]}]`).join(' %0A ');
-              console.log(`::notice title=${vw}px ${path}: ${keys.length - diffs.length} same, ${diffs.length} differ::${detail || 'all identical'}`);
+              const short = v => String(v).replace(/background-color=/g, 'bg=').replace(/margin-bottom=/g, 'mb=').replace(/line-height=/g, 'lh=').replace(/font-size=/g, 'fs=').replace(/border-radius=/g, 'r=').replace(/rgba?\(([^)]*)\)/g, '($1)').replace(/ /g, '');
+              const detail = diffs.map(k => `${k}: ${short(out.old[k])} -> ${short(out.new[k])}`).join(' %0A ');
+              console.log(`::notice title=${vw}px ${path} (${keys.length - diffs.length} same / ${diffs.length} differ)::${detail || 'all identical'}`);
             }
             await ctx.close();
           }
