@@ -1,32 +1,41 @@
 ---
 layout: archive
 title: "Sitemap"
+description: "Every page and publication on Sandesh G. Bhat's website."
 permalink: /sitemap/
 author_profile: true
 ---
 
 {% include base_path %}
 
-A list of all the pages on this site. For you robots out there is an [XML version]({{ base_path }}/sitemap.xml) available for digesting as well.
+{% comment %}
+  Lists the site's pages and publications. Pages with `sitemap: false` in
+  their front matter (404, Awards, Travel, Photography) and files without a
+  title (stylesheets, feeds, redirects, robots.txt) are left out, the same
+  pages that sitemap.xml leaves out.
+{% endcomment %}
+{% assign visible = site.pages | where_exp: "p", "p.title" | where_exp: "p", "p.sitemap != false" | where_exp: "p", "p.url != page.url" %}
+
+All the pages on this site. Search engines can use the [XML sitemap]({{ base_path }}/sitemap.xml).
 
 <h2>Pages</h2>
-{% for post in site.pages %}
-  {% include archive-single.html %}
-{% endfor %}
+<ul>
+  {% assign home = visible | where: "url", "/" | first %}
+  {% if home %}<li><a href="{{ base_path }}/">Home</a></li>{% endif %}
+  {% for item in site.data.navigation.main %}
+    {% assign p = visible | where: "url", item.url | first %}
+    {% if p %}<li><a href="{{ base_path }}{{ p.url }}">{{ item.title }}</a></li>{% endif %}
+  {% endfor %}
+  {% for p in visible %}
+    {% assign in_menu = site.data.navigation.main | where: "url", p.url | first %}
+    {% unless in_menu or p.url == "/" %}<li><a href="{{ base_path }}{{ p.url }}">{{ p.title }}</a></li>{% endunless %}
+  {% endfor %}
+</ul>
 
-{% capture written_label %}'None'{% endcapture %}
-
-{% for collection in site.collections %}
-{% unless collection.output == false or collection.label == "posts" %}
-  {% capture label %}{{ collection.label }}{% endcapture %}
-  {% if label != written_label %}
-  <h2>{{ label }}</h2>
-  {% capture written_label %}{{ label }}{% endcapture %}
-  {% endif %}
-{% endunless %}
-{% for post in collection.docs %}
-  {% unless collection.output == false or collection.label == "posts" %}
-  {% include archive-single.html %}
-  {% endunless %}
-{% endfor %}
-{% endfor %}
+<h2>Publications</h2>
+{% assign pubs = site.publications | sort: "date" | reverse %}
+<ul>
+  {% for p in pubs %}
+    <li><a href="{{ base_path }}{{ p.url }}">{{ p.title }}</a> ({{ p.date | date: "%Y" }})</li>
+  {% endfor %}
+</ul>

@@ -193,6 +193,11 @@ collections:
 
 # Defaults
 defaults:
+  # Google Search Console verification file: needed at the site root, but not a page to list
+  - scope:
+      path: "google28407931a310700f.html"
+    values:
+      sitemap: false
   # _posts
   - scope:
       path: ""

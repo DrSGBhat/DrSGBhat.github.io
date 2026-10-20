@@ -120,7 +120,7 @@ Replace `images/sandesh.jpg`, keeping the same name. Use a square photo about **
 ## Search engines, link previews and analytics
 
 - **Search results:** each main page has a `description:` line in its front matter (the block between the `---` lines). That text is what search results show. The home page uses `excerpt:`. The site-wide fallback is `description` in `_config.yml`.
-- **Sitemap:** `sitemap.xml` is generated automatically, and `robots.txt` points search engines to it. To keep a page out of it, add `sitemap: false` to the page's front matter. The hidden Awards, Travel and Photography pages already have this.
+- **Sitemap:** `sitemap.xml` (for search engines) is generated automatically, and `robots.txt` points search engines to it. The [Sitemap page](https://DrSGBhat.github.io/sitemap/), linked in every page's footer, lists the same pages for visitors. To leave a page out of both, add `sitemap: false` to its front matter. The hidden Awards, Travel and Photography pages already have this.
 - **Link previews:** when a page is shared on LinkedIn, Slack or email, the preview shows the image named by `og_image` in `_config.yml` (currently the profile photo).
 - **Analytics:** Google Analytics 4 is set by `analytics: google: tracking_id` in `_config.yml`. It runs only on the live site, so local previews aren't counted.
 

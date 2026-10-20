@@ -19,5 +19,5 @@
 </div>
 {% endif %}
 
-{% comment %} Site customization: short copyright line, as on the old theme. {% endcomment %}
-<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>.</div>
+{% comment %} Site customization: short copyright line, as on the old theme, plus the theme's Sitemap link. {% endcomment %}
+<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>. &middot; <a href="{{ base_path }}/sitemap/">{{ site.data.ui-text[site.locale].site_map | default: "Sitemap" }}</a></div>
