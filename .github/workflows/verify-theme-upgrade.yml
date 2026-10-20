@@ -204,7 +204,7 @@ jobs:
           // Icon diagnostics
           {
             const pg = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-            for (const [name, port, icon] of [['new', 8001, '.author__urls .fa-envelope'], ['old', 8002, '.author__urls .fa-envelope'], ['new', 8001, '#theme-icon'], ['new', 8001, '.author__urls .fa-github']]) {
+            for (const [name, port, icon] of [['new', 8001, '.author__urls .fa-envelope']]) {
               await pg.goto(`http://localhost:${port}/`, { waitUntil: 'load' });
               await pg.waitForTimeout(500);
               const info = await pg.evaluate((icon) => {
@@ -215,6 +215,17 @@ jobs:
               }, icon);
               console.log(`::notice title=icon ${name} ${icon}::${info}`);
             }
+            await pg.close();
+          }
+          {
+            const pg = await browser.newPage();
+            await pg.goto('http://localhost:8001/', { waitUntil: 'load' });
+            const sheets = await pg.evaluate(() => [...document.styleSheets].map(sh => {
+              let n = 'x', faces = [];
+              try { n = sh.cssRules.length; faces = [...sh.cssRules].filter(r => r.constructor.name === 'CSSFontFaceRule').map(r => r.style.getPropertyValue('font-family')); } catch (e) { n = 'err ' + e.message; }
+              return `${sh.href} rules=${n} faces=${faces.join('|')}`;
+            }).join(' %0A '));
+            console.log(`::notice title=stylesheets::${sheets}`);
             await pg.close();
           }
           // Theme toggle switches to light and back
@@ -239,6 +250,7 @@ jobs:
           }
           await browser.close();
           JS
-          for c in fa-sun fa-envelope fa-github; do echo "::notice title=css .$c::$(grep -oE "\.$c\{[^}]*\}" _site/assets/css/fontawesome.css | head -2 | tr '\n' ' ')"; done
-          echo "::notice title=css core::$(grep -oE "\.fa-solid::before[^}]*\}" _site/assets/css/fontawesome.css | head -1) $(grep -oE "@font-face\{[^}]*solid[^}]*\}" _site/assets/css/fontawesome.css | head -1 | cut -c1-400)"
+          echo "::notice title=fa css head::$(head -c 600 _site/assets/css/fontawesome.css | od -An -c | tr -s ' ' | tr '\n' ' ' | cut -c1-2500)"
+          echo "::notice title=fa-sun bytes::$(grep -oE '\.fa-sun\{[^}]*\}' _site/assets/css/fontawesome.css | head -1 | od -An -tx1 | tr '\n' ' ')"
+          echo "::notice title=head links::$(grep -oE '<link[^>]*stylesheet[^>]*>' _site/index.html | tr '\n' ' ')"
           node styles.mjs
