@@ -1,0 +1,29 @@
+# TEMPORARY: builds the site so colour palettes can be previewed. Delete this branch afterwards.
+name: tmp colour preview build
+on:
+  push:
+    branches: [tmp-color-preview]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+      - name: Build with the GitHub Pages gem set (v232)
+        run: |
+          printf 'source "https://rubygems.org"\ngem "github-pages", "232", group: :jekyll_plugins\ngem "webrick"\n' > Gemfile.preview
+          printf 'url: "http://localhost:8765"\n' > _config.preview.yml
+          export BUNDLE_GEMFILE=Gemfile.preview
+          bundle install --jobs 4
+          bundle exec jekyll build --config _config.yml,_config.preview.yml
+      - name: Push the built site to a temporary branch
+        run: |
+          cd _site
+          git init -q -b tmp-color-preview-site
+          git config user.name "tmp-preview"; git config user.email "noreply@anthropic.com"
+          git add -A && git commit -qm "Built site for colour preview (temporary)"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" tmp-color-preview-site
