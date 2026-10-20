@@ -1,0 +1,105 @@
+# TEMPORARY: verifies the theme-upgrade branch builds with GitHub Pages'
+# gems (github-pages 232). Deleted before the pull request is merged.
+name: Verify theme upgrade (temporary)
+
+on:
+  push:
+    branches: [theme-upgrade]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    env:
+      BUNDLE_GEMFILE: ${{ github.workspace }}/../ci-gems/Gemfile
+      JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PAGES_REPO_NWO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write a Gemfile pinned to github-pages 232
+        run: |
+          mkdir -p "$(dirname "$BUNDLE_GEMFILE")"
+          cat > "$BUNDLE_GEMFILE" <<'GEMS'
+          source "https://rubygems.org"
+          gem "github-pages", "232", group: :jekyll_plugins
+          gem "webrick"
+          GEMS
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Show Jekyll and Sass versions
+        run: |
+          bundle exec jekyll --version
+          bundle exec gem list | grep -E "^(jekyll|jekyll-sass-converter|sass|sassc|liquid|kramdown|github-pages) "
+
+      - name: Jekyll build (production)
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --safe --trace 2>&1 | tee build.log; test ${PIPESTATUS[0]} -eq 0
+
+      - name: No build warnings or Liquid errors
+        run: |
+          if grep -nE "Warning|Liquid Exception|Liquid Warning|Error" build.log; then
+            grep -nE "Warning|Liquid Exception|Liquid Warning|Error" build.log | while read -r l; do echo "::error title=build log::$l"; done
+            exit 1
+          fi
+
+      - name: Install html-proofer
+        run: gem install html-proofer -v "~> 5.0" --no-document
+
+      - name: html-proofer (internal links, images, scripts)
+        run: |
+          set -o pipefail
+          htmlproofer ./_site --disable-external --checks Links,Images,Scripts \
+            --ignore-urls "/^https?:/" 2>&1 | tee proofer.log || {
+            grep -E "^\* |^  \* |^For " proofer.log | head -60 | while read -r l; do echo "::error title=html-proofer::$l"; done
+            exit 1
+          }
+
+      - name: GA4 tag only in production
+        run: |
+          set -e
+          grep -q "googletagmanager.com/gtag/js?id=G-G39J6CJ1T7" _site/index.html || { echo "::error::GA4 tag missing from production build"; exit 1; }
+          JEKYLL_ENV=development bundle exec jekyll build --safe -d _site_dev
+          if grep -rl "googletagmanager" _site_dev; then echo "::error::GA4 tag present in development build"; exit 1; fi
+
+      - name: Theme assets and compiled CSS
+        run: |
+          set -e
+          fail=0
+          for f in _site/assets/css/main.css _site/assets/css/fontawesome.css _site/assets/js/main.min.js _site/favicon.ico _site/images/favicon-16x16.png _site/images/favicon-32x32.png _site/images/apple-touch-icon.png _site/images/android-chrome-192x192.png _site/images/android-chrome-512x512.png _site/images/manifest.json _site/images/sandesh.jpg _site/robots.txt _site/sitemap.xml _site/feed.xml; do
+            [ -s "$f" ] || { echo "::error::missing $f"; fail=1; }
+          done
+          grep -q "252a34" _site/assets/css/main.css || { echo "::error::site background colour missing from main.css"; fail=1; }
+          grep -q "publication-list" _site/assets/css/main.css || { echo "::error::.publication-list rule missing"; fail=1; }
+          grep -q "Font Awesome Free 6" _site/assets/css/fontawesome.css || { echo "::error::fontawesome.css is not Font Awesome 6"; fail=1; }
+          grep -q "fa-solid-900" _site/assets/css/fontawesome.css || { echo "::error::fontawesome.css has no webfont"; fail=1; }
+          grep -q 'data-theme="dark"' _site/index.html || { echo "::error::dark default not set on <html>"; fail=1; }
+          exit $fail
+
+      - name: Pages, redirects and publications
+        run: |
+          set -e
+          fail=0
+          for p in index cv/index publications/index presentations/index teaching/index service/index contact/index sitemap/index 404 awards/index mytravel/index Photography/index about/index; do
+            f="_site/$p.html"; [ -s "$f" ] || { echo "::error::missing $f"; fail=1; }
+          done
+          n=$(ls _site/publications | grep -vc '^index.html$' || true)
+          [ "$n" -eq 29 ] || { echo "::error::expected 29 publication pages, found $n"; fail=1; }
+          for removed in year-archive markdown non-menu-page archive-layout-with-content terms talks talkmap portfolio posts tags categories collection-archive page-archive; do
+            [ ! -e "_site/$removed" ] && [ ! -e "_site/$removed.html" ] || { echo "::error::removed page came back: $removed"; fail=1; }
+          done
+          for meta in 'name="description"' 'property="og:description"' 'property="og:image"' '"sameAs"' '"image"'; do
+            grep -q "$meta" _site/publications/index.html || { echo "::error::publications page lacks $meta"; fail=1; }
+            grep -q "$meta" _site/cv/index.html || { echo "::error::cv page lacks $meta"; fail=1; }
+          done
+          for p in awards mytravel Photography; do
+            if grep -q "/$p/" _site/sitemap.xml; then echo "::error::$p is in sitemap.xml"; fail=1; fi
+          done
+          exit $fail
