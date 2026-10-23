@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 <br>
-updated: 10/9/2025
+updated: 10/23/2026
 
 # Extramural
 ## Oral
@@ -91,7 +91,7 @@ updated: 10/9/2025
 ## Oral
 5. <b>Brachial plexus injury neuromuscular control, assistance, and recovery monitoring</b><br>
 	March, 2025 <br>
-	<i>Featured Online Presenter</i>, Musculoskeletal Research Conference<br>
+	<i>Featured Presenter</i>, Musculoskeletal Research Conference<br>
 	Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN.
 
 4. <b>Enhanced functionality using a powered upper extremity exoskeleton</b><br>

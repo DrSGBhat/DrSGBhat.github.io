@@ -4,12 +4,21 @@ description: "Academic, professional, and community service by Sandesh G. Bhat, 
 permalink: /service/
 author_profile: true
 ---
-updated: 8/7/2026
+updated: 10/23/2026
 
 # Academic
 
-* <b>Member, Graduate Faculty</b> (2025-Present)
+* <b>Member, Science on Display Committee</b> (2026)
 	* <i>University of Wisconsin - Eau Claire, Eau Claire, WI</i>
+
+* <b>Member, Innovation Hub Advisory Committee</b> (2026)
+	* <i>University of Wisconsin - Eau Claire, Eau Claire, WI</i>
+
+* <b>Member, Graduate Faculty Committee</b> (2025-Present)
+	* <i>University of Wisconsin - Eau Claire, Eau Claire, WI</i>
+
+* <b>Advisory Board Member</b> (2025-Present)
+	* <i>Global Insights on Medicine and Nursing</i>
 
 * <b>Peer Reviewer</b>
 	* <i>Journals</i>
@@ -31,6 +40,9 @@ updated: 8/7/2026
 	* <i>Mayo Clinic Graduate School of Biomedical Sciences, Mayo Clinic, Rochester, MN</i>
 
 # Organizational
+
+* <b>Member, Education Committee</b> (2025 - 2026)
+	* <i>American Society of Biomechanics, U.S.A.</i>
 
 * <b>Program Committee member, Smart and Connected Health</b> (2026)
 	* <i>COMPSAC, Institute of Electrical and Electronics Engineers, U.S.A.</i> 
@@ -67,9 +79,23 @@ updated: 8/7/2026
 
 # Community
 
-* <b>Stem-Fair Mentor</b> (2021 - present)
+* <b>Volunteer</b> (2025 - present)
+	* <i>Minnesota Climbers Association</i>
+
+* <b>Volunteer</b> (2025)
+	* <i>Midwest Climbing Series - Got Chalk?</i>
+
+* <b>Member</b> (2025 - 2026)
+	* <i>Access Fund</i>
+
+* <b>Volunteer Route Setter and Belayer</b> (2023 - 2025)
+	* <i>"Full Tilt" Climbing Competition, Roca Climbing and Fitness</i>
+
+* <b>Stem-Fair Mentor</b> (2021 - 2025)
 	* <i>Oraculi, Rochester, MN</i>
 
 * <b>Volunteer Bike Mechanic</b> (2023)
 	* <i>Alliance of Chicanos, Hispanics, and Latin Americans (ACHLA), Rochester, MN</i>
 
+* <b>Student Volunteer, Devils in Disguise initiative</b> (2017)
+	* <i>Food for the Hungry, Inc., Tempe, AZ</i>
