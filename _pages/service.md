@@ -36,6 +36,12 @@ updated: 10/23/2026
 		* IEEE International Conference on Robotics and Automation (2020)
 		* IEEE International Conference on Intelligent Robots and Systems (2020)
 
+* <b>Poster Session Judge</b> (2026)
+	* <i>WiSys SPARK 2026</i>
+
+* <b>Poster Session Judge</b> (2026)
+	* <i>Human Movement Variability Conference, University of Nebraska at Omaha, Omaha, NE</i>
+
 * <b>Graduate Symposium Judge</b> (2023-2024)
 	* <i>Mayo Clinic Graduate School of Biomedical Sciences, Mayo Clinic, Rochester, MN</i>
 
